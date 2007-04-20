@@ -136,9 +136,9 @@ KDevelop manages or provides:
 %_datadir/apps/*
 %_datadir/icons/*/*/*/*
 %_datadir/config/kdeveloprc
-%_datadir/services/*
-%_datadir/servicetypes/*
-%_datadir/config/kdevassistantrc
+%_datadir/kde4/services/*
+%_datadir/kde4/servicetypes/*
+#%_datadir/config/kdevassistantrc
 %exclude %_datadir/apps/cmake/modules/KDevelopMacros.cmake
 
 #------------------------------------------------
@@ -261,5 +261,6 @@ make install DESTDIR=%buildroot
 
 %clean
 rm -fr %buildroot
+
 
 
