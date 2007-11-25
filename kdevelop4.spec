@@ -41,6 +41,7 @@ Group: 		Development/C++
 BuildRoot:	%_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= %version
+BuildRequires:  kdevplatform4-devel
 BuildRequires:  jpeg-devel
 BuildRequires:  png-devel 
 BuildRequires:  X11-devel
