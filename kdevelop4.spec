@@ -1,14 +1,4 @@
-# remove it when kde4 will be official kde package
-%define _prefix /opt/kde4/
-%define _libdir %_prefix/%_lib
-%define _datadir %_prefix/share/
-%define _bindir %_prefix/bin
-%define _includedir %_prefix/include/
-%define _iconsdir %_datadir/icons/
-%define _sysconfdir %_prefix/etc/
-%define _docdir %_datadir/doc/
-
-%define branch_date 20070418
+%define revision 740174 
 
 %define use_enable_final 1
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
@@ -37,35 +27,32 @@
 
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
-Version: 	3.80.3
-Release: 	%mkrel 0.%branch_date.3
-Epoch: 3
-URL: http://www.kde.org 
+Version: 	3.96.1
+Release: 	%mkrel 0.%revision.1
+Epoch:          3
+URL:            http://www.kde.org 
 %if %branch
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version-%branch_date.tar.bz2
+Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%revision.tar.bz2
 %else
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
+Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
 %endif
-Source1: c_cpp_reference-2.0.2.tar.bz2
-Source2: kdevelop-3.0-Makefile.PL
-Patch0: kdevelop-3.2.1-stdcppfix.patch
+Source1:        c_cpp_reference-2.0.2.tar.bz2
 Group: 		Development/C++
 BuildRoot:	%_tmppath/%name-%version-%release-root
-License: GPL
-%define mini_release %mkrel 0.%branch_date.1
-BuildRequires: kdelibs4-devel >= %version-%mini_release
-BuildRequires: libjpeg-devel
-BuildRequires: png-devel 
-BuildRequires:	X11-devel
-BuildRequires: libart_lgpl-devel
-BuildRequires: flex
-BuildRequires: graphviz
-BuildRequires: db-devel
-BuildRequires: subversion-devel
-BuildRequires: apr-devel
-BuildRequires: apr-util-devel
+License:        GPL
+BuildRequires:  kdelibs4-devel >= %version
+BuildRequires:  jpeg-devel
+BuildRequires:  png-devel 
+BuildRequires:  X11-devel
+BuildRequires:  libart_lgpl-devel
+BuildRequires:  flex
+BuildRequires:  graphviz
+BuildRequires:  db-devel
+BuildRequires:  subversion-devel
+BuildRequires:  apr-devel
+BuildRequires:  apr-util-devel
 %if %compile_apidox
-#BuildRequires: doxygen
+BuildRequires: doxygen
 %endif
 %py_requires -d
 
@@ -73,8 +60,6 @@ Requires: enscript
 Requires: gcc-c++ 
 Requires: gcc-cpp 
 Requires: openssl-devel
-#why kdeutils is required ?
-#Requires: kdegraphics4 kdelibs4-devel kdesdk4  kdeutils4
 Requires: libx11-devel
 Requires: jpeg-devel 
 Requires: qt4-devel >= 4.2
@@ -83,13 +68,11 @@ Requires: perl
 Requires: sgml-tools 
 Requires: gettext 
 Requires: libz-devel
-#Requires: kdbg  
 Requires: ctags
 Requires: png-devel libart_lgpl-devel libtool
 Requires: cmake
 Requires: awk
 Requires: %lib_name = %epoch:%version-%release
-#Requires: graphviz
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Conflicts: mandrake-mime <= 0.4-5mdk
@@ -131,57 +114,114 @@ KDevelop manages or provides:
 
 %files
 %defattr(-,root,root) 
-%_bindir/*
-%_libdir/kde4/*
-%_datadir/apps/*
-%_datadir/icons/*/*/*/*
-%_datadir/config/kdeveloprc
-%_datadir/kde4/services/*
-%_datadir/kde4/servicetypes/*
-#%_datadir/config/kdevassistantrc
-%exclude %_datadir/apps/cmake/modules/KDevelopMacros.cmake
+%{_kde_bindir}/kdev_includepathresolver
+%{_kde_bindir}/kdevelop
+%{_kde_bindir}/qmake-parser
+%{_kde_datadir}/kde4/services/*.desktop
+%dir %{_kde_appsdir}/kdevappwizard
+%{_kde_appsdir}/kdevappwizard/kdevappwizard.rc
+%dir %{_kde_appsdir}/kdevappwizard/templates
+%{_kde_appsdir}/kdevappwizard/templates/qmake_qt4guiapp.tar.bz2
+%dir %{_kde_appsdir}/kdevcmakebuilder
+%{_kde_appsdir}/kdevcmakebuilder/data.kdev4
+%dir %{_kde_appsdir}/kdevcmakemanager
+%{_kde_appsdir}/kdevcmakemanager/data.kdev4
+%dir %{_kde_appsdir}/kdevcustommakemanager
+%{_kde_appsdir}/kdevcustommakemanager/kdevcustommakemanager.rc
+%dir %{_kde_appsdir}/kdevdocumentview
+%{_kde_appsdir}/kdevdocumentview/kdevdocumentview.rc
+%dir %{_kde_appsdir}/kdevelop
+%{_kde_appsdir}/kdevelop/kdevelop.notifyrc
+%{_kde_appsdir}/kdevelop/kdevelopui.rc
+%dir %{_kde_appsdir}/kdevelop/pics
+%{_kde_appsdir}/kdevelop/pics/*.png
+%dir %{_kde_appsdir}/kdevgrepview
+%{_kde_appsdir}/kdevgrepview/kdevgrepview.rc
+%dir %{_kde_appsdir}/kdevplatform
+%dir %{_kde_appsdir}/kdevplatform/profiles
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/AdaIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/AdaIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE/CIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE/CIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE/CppIDE
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE/CppIDE/KDECppIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE/CppIDE/KDECppIDE/profile.config
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE/CppIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/CandCppIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/FortranIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/FortranIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/HaskellIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/HaskellIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/JavaIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/JavaIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/PascalIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/PascalIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/CompiledLanguageIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/DatabaseIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/DatabaseIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/PHPIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/PHPIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/PerlIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/PerlIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/PythonIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/PythonIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/RubyIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/RubyIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/ShellIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/ShellIDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE
+%{_kde_appsdir}/kdevplatform/profiles/IDE/ScriptingLanguageIDE/profile.config
+%{_kde_appsdir}/kdevplatform/profiles/IDE/profile.config
+%dir %{_kde_appsdir}/kdevplatform/profiles/KDevAssistant
+%{_kde_appsdir}/kdevplatform/profiles/KDevAssistant/profile.config
+%{_kde_appsdir}/kdevplatform/profiles/profile.config
+%dir %{_kde_appsdir}/kdevqmakebuilder
+%{_kde_appsdir}/kdevqmakebuilder/data.kdev4
+%dir %{_kde_datadir}/config
+%{_kde_datadir}/config/kdeveloprc
+%{_kde_iconsdir}/hicolor/*/*/*.png
+%{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
+%{_kde_libdir}/kde4/kcm_kdev_qmakebuilder.so
+%{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
+%{_kde_libdir}/kde4/kdevappwizard.so
+%{_kde_libdir}/kde4/kdevcmakebuilder.so
+%{_kde_libdir}/kde4/kdevcmakemanager.so
+%{_kde_libdir}/kde4/kdevcpplanguagesupport.so
+%{_kde_libdir}/kde4/kdevcustommakemanager.so
+%{_kde_libdir}/kde4/kdevdocumentview.so
+%{_kde_libdir}/kde4/kdevgrepview.so
+%{_kde_libdir}/kde4/kdevmakebuilder.so
+%{_kde_libdir}/kde4/kdevqmakebuilder.so
+%{_kde_libdir}/kde4/kdevqmakemanager.so
+%{_kde_libdir}/libkdev4cmakecommon.so
+%{_kde_libdir}/libkdev4cppduchain.so
+%{_kde_libdir}/libkdev4cppparser.so
+%{_kde_libdir}/libkdev4cpprpp.so
+%{_kde_libdir}/libkdev4qmakeparser.so
 
 #------------------------------------------------
 
-%package -n %lib_name-devel
+%package devel
 Summary: Development files for kdevelop
 Group: Development/KDE and Qt
 
-Provides: kdevelop4-devel = %epoch:%version-%release
-Requires: %lib_name = %epoch:%version-%release
+Obsoletes: %lib_name-devel < 3.96.1
 
-%description -n %lib_name-devel
+%description devel
 Development files for kdevelop.
 
-%files -n %lib_name-devel
+%files devel
 %defattr(-,root,root)
-%_libdir/*.so
-%dir %_includedir/kdevelop
-%_includedir/*/*
-%_datadir/apps/cmake/modules/KDevelopMacros.cmake
-
-
-#------------------------------------------------
-
-%package -n %lib_name
-Summary: Libraries files for kdevelop
-Group: Development/KDE and Qt
-Obsoletes: %old_lib_name
-Provides: %lib_name_orig = %epoch:%version-%release
-
-%description -n %lib_name
-Libraries files for kdevelop.
-
-%post -n %lib_name-devel -p /sbin/ldconfig
-%postun -n %lib_name-devel -p /sbin/ldconfig
-
-%post -n %lib_name -p /sbin/ldconfig
-%postun -n %lib_name -p /sbin/ldconfig
-
-%files -n %lib_name
-%defattr(-,root,root)
-%_libdir/*.so.*
-
+%{_kde_appsdir}/cmake/modules/FindKDevelop.cmake
+%{_kde_appsdir}/cmake/modules/KDevelopMacros.cmake
+%{_kde_includedir}/kdevelop/cmake/icmakebuilder.h
+%{_kde_includedir}/kdevelop/make/imakebuilder.h
+%{_kde_includedir}/kdevelop/qmake/iqmakebuilder.h
 
 #------------------------------------------------
 
@@ -198,30 +238,11 @@ Documentation kdevelop.
 #------------------------------------------------
 
 %prep
-%setup -q -nkdevelop-%version-%branch_date
+%setup -q -n kdevelop-%version
 
 %build
 
-cd $RPM_BUILD_DIR/kdevelop-%version-%branch_date
-mkdir build
-cd build
-export QTDIR=/usr/lib/qt4/
-export PATH=$QTDIR/bin:$PATH
-
-cmake -DCMAKE_INSTALL_PREFIX=%_prefix \
-%if %use_enable_final
-      -DKDE4_ENABLE_FINAL=ON \
-%endif
-%if %use_enable_pie
-      -DKDE4_ENABLE_FPIE=ON \
-%endif
-%if %unstable
-      -DCMAKE_BUILD_TYPE=Debug \
-%endif
-%if "%{_lib}" != "lib"
-      -DLIB_SUFFIX=64 \
-%endif
-        ../
+%cmake_kde4
 
 %make
 
@@ -233,31 +254,10 @@ cmake -DCMAKE_INSTALL_PREFIX=%_prefix \
 %install
 rm -fr %buildroot
 
-cd $RPM_BUILD_DIR/kdevelop-%version-%branch_date
+cd $RPM_BUILD_DIR/kdevelop-%version
 cd build
 
 make DESTDIR=%buildroot install
-
-
-
-# Create LMDK menus
-install -d %buildroot/%_datadir/applications/kde/
-
-#Create LMDK menu entries
-for kdev in kdevelop kdevdesigner kdevassistant kdevelop_c_cpp kdevelop_kde_cpp kdevelop_ruby kdevelop_scripting; do
-	mandriva-add-xdg-categories.pl %buildroot/%_datadir/applications/kde/${kdev}.desktop  "More Applications/Development/Development Environments" 
-done
-
-(
-cd $RPM_BUILD_DIR/%name-%version/
-rm -rf perl-kdevelop
-mkdir perl-kdevelop/
-cd perl-kdevelop/
-install -m 0755 %SOURCE2 Makefile.PL
-ln ../parts/appwizard/common/kdevelop.pm kdevelop.pm
-perl Makefile.PL INSTALLDIRS=vendor
-make install DESTDIR=%buildroot
-)
 
 %clean
 rm -fr %buildroot
