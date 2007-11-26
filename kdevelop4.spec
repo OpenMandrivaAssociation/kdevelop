@@ -28,7 +28,7 @@
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
 Version: 	3.96.1
-Release: 	%mkrel 0.%revision.1
+Release: 	%mkrel 0.%revision.2
 Epoch:          3
 URL:            http://www.kde.org 
 %if %branch
@@ -73,7 +73,6 @@ Requires: ctags
 Requires: png-devel libart_lgpl-devel libtool
 Requires: cmake
 Requires: awk
-Requires: %lib_name = %epoch:%version-%release
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Conflicts: mandrake-mime <= 0.4-5mdk
