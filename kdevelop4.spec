@@ -1,4 +1,4 @@
-%define revision 740174 
+%define revision 742897
 
 %define use_enable_final 1
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
@@ -137,6 +137,8 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevelop/pics/*.png
 %dir %{_kde_appsdir}/kdevgrepview
 %{_kde_appsdir}/kdevgrepview/kdevgrepview.rc
+%dir %{_kde_appsdir}/kdevcppdebugger
+%{_kde_appsdir}/kdevcppdebugger/kdevcppdebuggerui.rc
 %dir %{_kde_appsdir}/kdevplatform
 %dir %{_kde_appsdir}/kdevplatform/profiles
 %dir %{_kde_appsdir}/kdevplatform/profiles/IDE
@@ -198,6 +200,8 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevmakebuilder.so
 %{_kde_libdir}/kde4/kdevqmakebuilder.so
 %{_kde_libdir}/kde4/kdevqmakemanager.so
+%{_kde_libdir}/kde4/kcm_kdev_cppdebugger.so
+%{_kde_libdir}/kde4/kdevcppdebugger.so
 %{_kde_libdir}/libkdev4cmakecommon.so
 %{_kde_libdir}/libkdev4cppduchain.so
 %{_kde_libdir}/libkdev4cppparser.so
