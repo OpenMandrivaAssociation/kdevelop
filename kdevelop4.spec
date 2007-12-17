@@ -38,7 +38,6 @@ Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.
 %endif
 Source1:        c_cpp_reference-2.0.2.tar.bz2
 Group: 		Development/C++
-BuildRoot:	%_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= %version
 BuildRequires:  kdevplatform4-devel
