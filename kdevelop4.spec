@@ -100,8 +100,8 @@ KDevelop manages or provides:
      built-in dialog editor
    * Debugging your application by integrating KDbg
    * Editing of project-specific pixmaps with KIconEdit
-   * The inclusion of any other program you need for development by adding it to
-     the "Tools" menu according to your individual needs.
+   * The inclusion of any other program you need for development by adding it
+     to the "Tools" menu according to your individual needs.
 
 %post
 %{update_desktop_database}
