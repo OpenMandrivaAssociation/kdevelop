@@ -1,19 +1,8 @@
-%define revision 742897
-
-%define use_enable_final 1
-%{?_no_enable_final: %{expand: %%global use_enable_final 0}}
-
 %define compile_apidox 1
 %{?_no_apidox: %{expand: %%global compile_apidox 0}}
 
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
-
-%define branch 1
-%{?_branch: %{expand: %%global branch 1}}
-
-%define use_enable_pie 1
-%{?_no_enable_pie: %{expand: %%global use_enable_pie 0}}
 
 %if %unstable
 %define dont_strip 1
@@ -27,21 +16,17 @@
 
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
-Version: 	3.96.1
-Release: 	%mkrel 0.%revision.2
+Version: 	4.0.70
+Release: 	%mkrel 1
 Epoch:          3
 URL:            http://www.kde.org 
-%if %branch
-Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%revision.tar.bz2
-%else
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
-%endif
 Source1:        c_cpp_reference-2.0.2.tar.bz2
 Group: 		Development/C++
 BuildRoot:	%_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= %version
-BuildRequires:  kdevplatform4-devel
+BuildRequires:  kdevplatform4-devel >= %version
 BuildRequires:  jpeg-devel
 BuildRequires:  png-devel 
 BuildRequires:  X11-devel
@@ -139,6 +124,12 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevgrepview/kdevgrepview.rc
 %dir %{_kde_appsdir}/kdevcppdebugger
 %{_kde_appsdir}/kdevcppdebugger/kdevcppdebuggerui.rc
+%dir %{_kde_appsdir}/kdevcppsupport
+%{_kde_appsdir}/kdevcppsupport/kdevcppsupport.rc
+%dir %{_kde_appsdir}/kdevqtdesigner
+%{_kde_appsdir}/kdevqtdesigner/kdevqtdesigner.rc
+%dir %{_kde_appsdir}/kdevvalgrind
+%{_kde_appsdir}/kdevvalgrind/kdevvalgrind.rc      
 %dir %{_kde_appsdir}/kdevplatform
 %dir %{_kde_appsdir}/kdevplatform/profiles
 %dir %{_kde_appsdir}/kdevplatform/profiles/IDE
@@ -207,6 +198,10 @@ KDevelop manages or provides:
 %{_kde_libdir}/libkdev4cppparser.so
 %{_kde_libdir}/libkdev4cpprpp.so
 %{_kde_libdir}/libkdev4qmakeparser.so
+%{_kde_libdir}/kde4/kcm_kdev_valgrindsettings.so
+%{_kde_libdir}/kde4/kdevqtdesigner.so
+%{_kde_libdir}/kde4/kdevvalgrind.so
+%{_kde_libdir}/libkdev4qmakeduchain.so
 
 #------------------------------------------------
 
