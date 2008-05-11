@@ -16,8 +16,8 @@
 
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
-Version: 4.0.71
-Release: %mkrel 1
+Version:        4.0.73
+Release:        %mkrel 1
 Epoch:          3
 URL:            http://www.kde.org 
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
@@ -38,29 +38,29 @@ BuildRequires:  subversion-devel
 BuildRequires:  apr-devel
 BuildRequires:  apr-util-devel
 %if %compile_apidox
-BuildRequires: doxygen
+BuildRequires:  doxygen
 %endif
 %py_requires -d
 
-Requires: enscript 
-Requires: gcc-c++ 
-Requires: gcc-cpp 
-Requires: openssl-devel
-Requires: libx11-devel
-Requires: jpeg-devel 
-Requires: qt4-devel >= 4.2
-Requires: make 
-Requires: perl 
-Requires: sgml-tools 
-Requires: gettext 
-Requires: libz-devel
-Requires: ctags
-Requires: png-devel libart_lgpl-devel libtool
-Requires: cmake
-Requires: awk
+Requires:      enscript 
+Requires:      gcc-c++ 
+Requires:      gcc-cpp 
+Requires:      openssl-devel
+Requires:      libx11-devel
+Requires:      jpeg-devel 
+Requires:      qt4-devel >= 4.2
+Requires:      make 
+Requires:      perl 
+Requires:      sgml-tools 
+Requires:      gettext 
+Requires:      libz-devel
+Requires:      ctags
+Requires:      png-devel libart_lgpl-devel libtool
+Requires:      cmake
+Requires:      awk
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
-Conflicts: mandrake-mime <= 0.4-5mdk
+Conflicts:     mandrake-mime <= 0.4-5mdk
 
 %description
 The KDevelop Integrated Development Environment provides many features that
