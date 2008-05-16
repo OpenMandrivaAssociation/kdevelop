@@ -37,6 +37,7 @@ BuildRequires:  db-devel
 BuildRequires:  subversion-devel
 BuildRequires:  apr-devel
 BuildRequires:  apr-util-devel
+BuildRequires:	automoc
 %if %compile_apidox
 BuildRequires:  doxygen
 %endif
