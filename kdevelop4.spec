@@ -19,7 +19,7 @@
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
 Version:    3.9.82
-Release:    %mkrel 0.%svn.3
+Release:    %mkrel 0.%svn.4
 Epoch:          4
 URL:            http://www.kde.org 
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%svn.tar.bz2
@@ -153,6 +153,11 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevqtdesigner.so
 %{_kde_libdir}/kde4/kdevvalgrind.so
 %{_kde_libdir}/libkdev4qmakeduchain.so
+%{_kde_libdir}/libkdevcheck.so
+%{_kde_libdir}/libkdevcppunit.so
+%{_kde_libdir}/libkdevqtest.so
+%{_kde_libdir}/libkdevveritascoverage.so
+%{_kde_libdir}/libveritascpp.so
 
 #------------------------------------------------
 
@@ -171,11 +176,6 @@ Development files for kdevelop.
 %{_kde_appsdir}/cmake/modules/FindKDevelop.cmake
 %{_kde_appsdir}/cmake/modules/KDevelopMacros.cmake
 %{_kde_includedir}/kdevelop
-%{_kde_libdir}/libkdevcheck.so
-%{_kde_libdir}/libkdevcppunit.so
-%{_kde_libdir}/libkdevqtest.so
-%{_kde_libdir}/libkdevveritascoverage.so
-%{_kde_libdir}/libveritascpp.so
 
 #------------------------------------------------
 
