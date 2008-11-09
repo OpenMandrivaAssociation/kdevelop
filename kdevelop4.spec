@@ -44,6 +44,7 @@ BuildRequires:	automoc
 BuildRequires:  doxygen
 %endif
 %py_requires -d
+BuildRequires:  check-devel
 
 Requires:      enscript 
 Requires:      gcc-c++ 
