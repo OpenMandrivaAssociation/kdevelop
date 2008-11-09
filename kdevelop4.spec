@@ -19,7 +19,7 @@
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
 Version:    3.9.82
-Release:    %mkrel 0.%svn.2
+Release:    %mkrel 0.%svn.3
 Epoch:          4
 URL:            http://www.kde.org 
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%svn.tar.bz2
@@ -66,6 +66,8 @@ Requires:      awk
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Conflicts:     mandrake-mime <= 0.4-5mdk
+Obsoletes:     kdevelop <= 4:3.5.3-2
+Obsoletes:     %{_lib}kdevelop3 <= 4:3.5.3-2
 
 %description
 The KDevelop Integrated Development Environment provides many features that
@@ -159,6 +161,7 @@ Summary: Development files for kdevelop
 Group: Development/KDE and Qt
 
 Obsoletes: %lib_name-devel < 3.96.1
+Obsoletes: %{_lib}kdevelop-devel <= 4:3.5.3-2
 
 %description devel
 Development files for kdevelop.
@@ -179,6 +182,7 @@ Development files for kdevelop.
 %package doc
 Summary: Development files for kdevelop
 Group: Development/KDE and Qt
+Obsoletes: kdevelop-doc <= 4:3.5.3-2
 
 %description doc
 Documentation kdevelop.
