@@ -45,6 +45,7 @@ BuildRequires:  doxygen
 %endif
 %py_requires -d
 BuildRequires:  check-devel
+BuildRequires:  cppunit-devel
 
 Requires:      enscript 
 Requires:      gcc-c++ 
