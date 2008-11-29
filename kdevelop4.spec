@@ -19,7 +19,7 @@
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
 Version:    3.9.83
-Release:    %mkrel 0.%svn.1
+Release:    %mkrel 0.%svn.2
 Epoch:          4
 URL:            http://www.kde.org 
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%svn.tar.bz2
