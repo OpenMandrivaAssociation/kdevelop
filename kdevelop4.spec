@@ -14,15 +14,14 @@
 %define old_lib_major 2
 %define old_lib_name %mklibname kdevelop4 %old_lib_major
 
-%define     svn 886616
 
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
-Version:    3.9.83
-Release:    %mkrel 0.%svn.2
+Version:    3.9.84
+Release:    %mkrel 1
 Epoch:          4
 URL:            http://www.kde.org 
-Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%svn.tar.bz2
+Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
 Source1:        c_cpp_reference-2.0.2.tar.bz2
 Group: 		Development/C++
 BuildRoot:	%_tmppath/%name-%version-%release-root
@@ -113,11 +112,8 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevqtdesigner
 %{_kde_appsdir}/kdevvalgrind
-%{_kde_appsdir}/kdevplatform
 %{_kde_appsdir}/kdevqmakebuilder
-%{_kde_appsdir}/kdevcheck
 %{_kde_appsdir}/kdevcoverage
-%{_kde_appsdir}/kdevcppunit
 %{_kde_appsdir}/kdevqtest
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_datadir}/config/kdeveloprc
@@ -139,9 +135,7 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kcm_kdev_cppdebugger.so
 %{_kde_libdir}/kde4/kdevcppdebugger.so
 %{_kde_libdir}/kde4/kdevastyle.so
-%{_kde_libdir}/kde4/kdevcheckview.so
 %{_kde_libdir}/kde4/kdevcoverage.so
-%{_kde_libdir}/kde4/kdevcppunitview.so
 %{_kde_libdir}/kde4/kdevindent.so
 %{_kde_libdir}/kde4/kdevqtestview.so
 %{_kde_libdir}/libkdev4cmakecommon.so
@@ -153,8 +147,6 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevqtdesigner.so
 %{_kde_libdir}/kde4/kdevvalgrind.so
 %{_kde_libdir}/libkdev4qmakeduchain.so
-%{_kde_libdir}/libkdevcheck.so
-%{_kde_libdir}/libkdevcppunit.so
 %{_kde_libdir}/libkdevqtest.so
 %{_kde_libdir}/libkdevveritascoverage.so
 %{_kde_libdir}/libveritascpp.so
@@ -193,7 +185,7 @@ Documentation kdevelop.
 #------------------------------------------------
 
 %prep
-%setup -q -n kdevelop
+%setup -q -n kdevelop-%version
 
 %build
 
@@ -209,7 +201,6 @@ Documentation kdevelop.
 %install
 rm -fr %buildroot
 
-cd $RPM_BUILD_DIR/kdevelop
 cd build
 
 make DESTDIR=%buildroot install
