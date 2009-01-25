@@ -62,6 +62,7 @@ Requires:      ctags
 Requires:      png-devel libart_lgpl-devel libtool
 Requires:      cmake
 Requires:      awk
+Requires:      kdevplatform4
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Conflicts:     mandrake-mime <= 0.4-5mdk
