@@ -17,17 +17,16 @@
 
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
-Version:    3.9.85
+Version:    3.9.90
 Release:    %mkrel 1
 Epoch:          4
 URL:            http://www.kde.org 
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
-Source1:        c_cpp_reference-2.0.2.tar.bz2
 Group: 		Development/C++
 BuildRoot:	%_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= %version
-BuildRequires:  kdevplatform4-devel >= 4:0.9.85
+BuildRequires:  kdevplatform4-devel >= 4:0.9.90
 BuildRequires:  jpeg-devel
 BuildRequires:  png-devel 
 BuildRequires:  X11-devel
@@ -42,7 +41,6 @@ BuildRequires:	automoc
 %if %compile_apidox
 BuildRequires:  doxygen
 %endif
-%py_requires -d
 BuildRequires:  check-devel
 BuildRequires:  cppunit-devel
 
@@ -102,7 +100,6 @@ KDevelop manages or provides:
 %{_kde_bindir}/qmake-parser
 %{_kde_bindir}/lcov_geninfo
 %{_kde_datadir}/kde4/services/*.desktop
-%{_kde_appsdir}/kdevappwizard
 %{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevcmakemanager
 %{_kde_appsdir}/kdevcustommakemanager
@@ -116,6 +113,7 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevqmakebuilder
 %{_kde_appsdir}/kdevcoverage
 %{_kde_appsdir}/kdevqtest
+%{_kde_appsdir}/kdevappwizard/templates
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_datadir}/config/kdeveloprc
 %{_kde_iconsdir}/hicolor/*/*/*.png
@@ -123,7 +121,6 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kcm_kdev_qmakebuilder.so
 %{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
 %{_kde_libdir}/kde4/kcm_kdev_veritassettings.so
-%{_kde_libdir}/kde4/kdevappwizard.so
 %{_kde_libdir}/kde4/kdevcmakebuilder.so
 %{_kde_libdir}/kde4/kdevcmakemanager.so
 %{_kde_libdir}/kde4/kdevcpplanguagesupport.so
@@ -189,11 +186,8 @@ Documentation kdevelop.
 %setup -q -n kdevelop-%version
 
 %build
-
 %cmake_kde4
-
 %make
-
 
 %if %compile_apidox
 #make apidox
@@ -201,13 +195,7 @@ Documentation kdevelop.
 
 %install
 rm -fr %buildroot
-
-cd build
-
-make DESTDIR=%buildroot install
+%makeinstall_std -C build
 
 %clean
 rm -fr %buildroot
-
-
-
