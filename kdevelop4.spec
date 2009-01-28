@@ -113,7 +113,7 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevqmakebuilder
 %{_kde_appsdir}/kdevcoverage
 %{_kde_appsdir}/kdevqtest
-%{_kde_appsdir}/kdevappwizard/templates
+%{_kde_appsdir}/kdevappwizard/templates/*
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_datadir}/config/kdeveloprc
 %{_kde_iconsdir}/hicolor/*/*/*.png
