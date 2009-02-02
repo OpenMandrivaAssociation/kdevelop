@@ -17,7 +17,7 @@
 
 Name: 		kdevelop4
 Summary: 	Integrated Development Environment for C++/C
-Version:    3.9.90
+Version:    3.9.91
 Release:    %mkrel 1
 Epoch:          4
 URL:            http://www.kde.org 
@@ -26,7 +26,7 @@ Group: 		Development/C++
 BuildRoot:	%_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= %version
-BuildRequires:  kdevplatform4-devel >= 4:0.9.90
+BuildRequires:  kdevplatform4-devel >= 4:0.9.91
 BuildRequires:  jpeg-devel
 BuildRequires:  png-devel 
 BuildRequires:  X11-devel
