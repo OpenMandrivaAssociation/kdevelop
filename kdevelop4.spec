@@ -20,7 +20,7 @@ Summary: 	Integrated Development Environment for C++/C
 Version:    3.9.91
 Release:    %mkrel 1
 Epoch:          4
-URL:            http://www.kde.org 
+URL:            http://www.kdevelop.org/
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
 Group: 		Development/C++
 BuildRoot:	%_tmppath/%name-%version-%release-root
