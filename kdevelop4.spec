@@ -15,15 +15,15 @@
 %define old_lib_name %mklibname kdevelop4 %old_lib_major
 
 
-Name: 		kdevelop4
-Summary: 	Integrated Development Environment for C++/C
-Version:    3.9.91
-Release:    %mkrel 1
+Name: 		    kdevelop4
+Summary: 	    Integrated Development Environment for C++/C
+Version:        3.9.91
+Release:        %mkrel 2
 Epoch:          4
 URL:            http://www.kdevelop.org/
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
-Group: 		Development/C++
-BuildRoot:	%_tmppath/%name-%version-%release-root
+Group: 		    Development/C++
+BuildRoot:	    %_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= %version
 BuildRequires:  kdevplatform4-devel >= 4:0.9.91
