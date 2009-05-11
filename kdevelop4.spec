@@ -44,7 +44,7 @@ BuildRequires:  doxygen
 %endif
 BuildRequires:  check-devel
 BuildRequires:  cppunit-devel
-
+BuildRequires:  kdebase4-workspace-devel
 Requires:      enscript 
 Requires:      gcc-c++ 
 Requires:      gcc-cpp 
