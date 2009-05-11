@@ -1,4 +1,4 @@
-%define compile_apidox 1
+%define compile_apidox 0
 %{?_no_apidox: %{expand: %%global compile_apidox 0}}
 
 %define unstable 1
@@ -14,19 +14,20 @@
 %define old_lib_major 2
 %define old_lib_name %mklibname kdevelop4 %old_lib_major
 
+%define svnrevision 966572
 
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
-Version:        3.9.91
-Release:        %mkrel 2
+Version:        3.9.92
+Release:        %mkrel 0.%svnrevision.1
 Epoch:          4
 URL:            http://www.kdevelop.org/
-Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
+Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%svnrevision.tar.bz2
 Group: 		    Development/C++
 BuildRoot:	    %_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= %version
-BuildRequires:  kdevplatform4-devel >= 4:0.9.91
+BuildRequires:  kdevplatform4-devel >= 4:0.9.92
 BuildRequires:  jpeg-devel
 BuildRequires:  png-devel 
 BuildRequires:  X11-devel
@@ -95,10 +96,7 @@ KDevelop manages or provides:
 
 %files
 %defattr(-,root,root) 
-%{_kde_bindir}/kdev_includepathresolver
 %{_kde_bindir}/kdevelop
-%{_kde_bindir}/qmake-parser
-%{_kde_bindir}/lcov_geninfo
 %{_kde_datadir}/kde4/services/*.desktop
 %{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevcmakemanager
@@ -106,13 +104,13 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevdocumentview
 %{_kde_appsdir}/kdevelop
 %{_kde_appsdir}/kdevgrepview
-%{_kde_appsdir}/kdevcppdebugger
 %{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevqtdesigner
 %{_kde_appsdir}/kdevvalgrind
 %{_kde_appsdir}/kdevqmakebuilder
 %{_kde_appsdir}/kdevcoverage
 %{_kde_appsdir}/kdevqtest
+%{_kde_appsdir}/kdevgdb
 %{_kde_appsdir}/kdevappwizard/templates/*
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_datadir}/config/kdeveloprc
@@ -130,18 +128,18 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevmakebuilder.so
 %{_kde_libdir}/kde4/kdevqmakebuilder.so
 %{_kde_libdir}/kde4/kdevqmakemanager.so
-%{_kde_libdir}/kde4/kcm_kdev_cppdebugger.so
-%{_kde_libdir}/kde4/kdevcppdebugger.so
 %{_kde_libdir}/kde4/kdevastyle.so
 %{_kde_libdir}/kde4/kdevcoverage.so
 %{_kde_libdir}/kde4/kdevindent.so
 %{_kde_libdir}/kde4/kdevqtestview.so
+%{_kde_libdir}/kde4/kcm_kdev_lcovsettings.so
+%{_kde_libdir}/kde4/kdevgdb.so
+%{_kde_libdir}/kde4/kdevqthelp.so
 %{_kde_libdir}/libkdev4cmakecommon.so
 %{_kde_libdir}/libkdev4cppduchain.so
 %{_kde_libdir}/libkdev4cppparser.so
 %{_kde_libdir}/libkdev4cpprpp.so
 %{_kde_libdir}/libkdev4qmakeparser.so
-%{_kde_libdir}/kde4/kcm_kdev_valgrindsettings.so
 %{_kde_libdir}/kde4/kdevqtdesigner.so
 %{_kde_libdir}/kde4/kdevvalgrind.so
 %{_kde_libdir}/libkdev4qmakeduchain.so
@@ -164,7 +162,6 @@ Development files for kdevelop.
 %files devel
 %defattr(-,root,root)
 %{_kde_appsdir}/cmake/modules/FindKDevelop.cmake
-%{_kde_appsdir}/cmake/modules/KDevelopMacros.cmake
 %{_kde_includedir}/kdevelop
 
 #------------------------------------------------
@@ -190,7 +187,7 @@ Documentation kdevelop.
 %make
 
 %if %compile_apidox
-#make apidox
+make apidox
 %endif
 
 %install
