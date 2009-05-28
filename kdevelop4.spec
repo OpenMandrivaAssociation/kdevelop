@@ -18,11 +18,11 @@
 
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
-Version:        3.9.92
-Release:        %mkrel 0.%svnrevision.1
+Version:        3.9.93
+Release:        %mkrel 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
-Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.%svnrevision.tar.bz2
+Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
 Group: 		    Development/C++
 BuildRoot:	    %_tmppath/%name-%version-%release-root
 License:        GPL
@@ -105,9 +105,7 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevelop
 %{_kde_appsdir}/kdevgrepview
 %{_kde_appsdir}/kdevcppsupport
-%{_kde_appsdir}/kdevqtdesigner
 %{_kde_appsdir}/kdevvalgrind
-%{_kde_appsdir}/kdevqmakebuilder
 %{_kde_appsdir}/kdevcoverage
 %{_kde_appsdir}/kdevqtest
 %{_kde_appsdir}/kdevgdb
@@ -116,7 +114,6 @@ KDevelop manages or provides:
 %{_kde_datadir}/config/kdeveloprc
 %{_kde_iconsdir}/hicolor/*/*/*.png
 %{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
-%{_kde_libdir}/kde4/kcm_kdev_qmakebuilder.so
 %{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
 %{_kde_libdir}/kde4/kcm_kdev_veritassettings.so
 %{_kde_libdir}/kde4/kdevcmakebuilder.so
@@ -126,8 +123,6 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevdocumentview.so
 %{_kde_libdir}/kde4/kdevgrepview.so
 %{_kde_libdir}/kde4/kdevmakebuilder.so
-%{_kde_libdir}/kde4/kdevqmakebuilder.so
-%{_kde_libdir}/kde4/kdevqmakemanager.so
 %{_kde_libdir}/kde4/kdevastyle.so
 %{_kde_libdir}/kde4/kdevcoverage.so
 %{_kde_libdir}/kde4/kdevindent.so
@@ -139,10 +134,7 @@ KDevelop manages or provides:
 %{_kde_libdir}/libkdev4cppduchain.so
 %{_kde_libdir}/libkdev4cppparser.so
 %{_kde_libdir}/libkdev4cpprpp.so
-%{_kde_libdir}/libkdev4qmakeparser.so
-%{_kde_libdir}/kde4/kdevqtdesigner.so
 %{_kde_libdir}/kde4/kdevvalgrind.so
-%{_kde_libdir}/libkdev4qmakeduchain.so
 %{_kde_libdir}/libkdevqtest.so
 %{_kde_libdir}/libkdevveritascoverage.so
 %{_kde_libdir}/libveritascpp.so
