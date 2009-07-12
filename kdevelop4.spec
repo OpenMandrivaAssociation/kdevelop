@@ -14,11 +14,9 @@
 %define old_lib_major 2
 %define old_lib_name %mklibname kdevelop4 %old_lib_major
 
-%define svnrevision 966572
-
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
-Version:        3.9.93
+Version:        3.9.94
 Release:        %mkrel 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
