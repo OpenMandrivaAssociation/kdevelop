@@ -59,9 +59,7 @@ Requires:      ctags
 Requires:      png-devel libart_lgpl-devel libtool
 Requires:      cmake
 Requires:      awk
-Requires:      kdevplatform4
-Requires(post): desktop-file-utils
-Requires(postun): desktop-file-utils
+Requires:      kdevplatform4 >= 4:0.9.95
 Conflicts:     mandrake-mime <= 0.4-5mdk
 Obsoletes:     kdevelop <= 4:3.5.3-2
 Obsoletes:     %{_lib}kdevelop3 <= 4:3.5.3-2
@@ -110,7 +108,6 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevappwizard/templates/*
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_datadir}/config/kdeveloprc
-%{_kde_iconsdir}/hicolor/*/*/*.png
 %{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
 %{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
 %{_kde_libdir}/kde4/kcm_kdev_veritassettings.so
