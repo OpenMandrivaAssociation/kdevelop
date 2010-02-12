@@ -93,6 +93,7 @@ KDevelop manages or provides:
 %files
 %defattr(-,root,root) 
 %{_kde_bindir}/kdevelop
+%{_kde_bindir}/kdevelop.bin
 %{_kde_datadir}/kde4/services/*.desktop
 %{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevcmakemanager
@@ -157,7 +158,7 @@ Documentation kdevelop.
 %setup -q -n kdevelop-%version
 
 %build
-%cmake_kde4 -DKDevPlatform_DIR=%_libdir/cmake/kdevplatform/
+%cmake_kde4
 %make
 
 %if %compile_apidox
