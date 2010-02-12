@@ -17,7 +17,7 @@
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
 Version:        3.9.98
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          4
 URL:            http://www.kdevelop.org/
 Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
@@ -59,7 +59,7 @@ Requires:      ctags
 Requires:      png-devel libart_lgpl-devel libtool
 Requires:      cmake
 Requires:      awk
-Requires:      kdevplatform4 >= 4:0.9.95
+Requires:      kdevplatform4 >= 4:0.9.98
 Conflicts:     mandrake-mime <= 0.4-5mdk
 Obsoletes:     kdevelop <= 4:3.5.3-2
 Obsoletes:     %{_lib}kdevelop3 <= 4:3.5.3-2
