@@ -16,7 +16,7 @@
 
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
-Version:        3.10.0
+Version:        3.10.1
 Release:        %mkrel 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
@@ -25,7 +25,7 @@ Group: 		    Development/C++
 BuildRoot:	    %_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= 2:4.3.0
-BuildRequires:  kdevplatform4-devel >= 4:0.10.0
+BuildRequires:  kdevplatform4-devel >= 4:0.10.1
 BuildRequires:  jpeg-devel
 BuildRequires:  png-devel 
 BuildRequires:  X11-devel
@@ -90,7 +90,7 @@ KDevelop manages or provides:
    * The inclusion of any other program you need for development by adding it
      to the "Tools" menu according to your individual needs.
 
-%files
+%files -f %name.lang
 %defattr(-,root,root) 
 %{_kde_bindir}/kdevelop
 %{_kde_bindir}/kdevelop.bin
@@ -168,6 +168,9 @@ make apidox
 %install
 rm -fr %buildroot
 %makeinstall_std -C build
+
+%find_lang %name desktop_extragear-sdk_kdevelop kdevcmake kdevcmakebuilder kdevcpp kdevcustommake kdevelop kdevformatters kdevgdb kdevmakebuilder kdevqthelp 
+
 
 %clean
 rm -fr %buildroot
