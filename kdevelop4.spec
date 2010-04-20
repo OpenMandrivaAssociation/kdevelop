@@ -169,7 +169,7 @@ make apidox
 rm -fr %buildroot
 %makeinstall_std -C build
 
-%find_lang %name desktop_extragear-sdk_kdevelop kdevcmake kdevcmakebuilder kdevcpp kdevcustommake kdevelop kdevformatters kdevgdb kdevmakebuilder kdevqthelp 
+%find_lang %name --all-name --with-kde 
 
 
 %clean
