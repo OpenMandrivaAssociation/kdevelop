@@ -105,6 +105,7 @@ KDevelop manages or provides:
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/config/kdeveloprc
+%{_kde_datadir}/mime/packages/kdevelop.xml
 %{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
 %{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
 %{_kde_libdir}/kde4/kdevcmakebuilder.so
