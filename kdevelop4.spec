@@ -13,36 +13,26 @@
 %define lib_name %mklibname kdevelop4 %lib_major
 %define old_lib_major 2
 %define old_lib_name %mklibname kdevelop4 %old_lib_major
+%define gitver git20100906
 
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
-Version:        4.0.2
-Release:        %mkrel 1
+Version:        4.1.60
+Release:        %mkrel -c %gitver 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
-Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
+#Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
+Source:		kdevelop-%{version}-%{gitver}.tar.gz
+Patch0:		kdevelop-4.1.60-fix-build.patch
 Group: 		    Development/C++
 BuildRoot:	    %_tmppath/%name-%version-%release-root
 License:        GPL
-BuildRequires:  kdelibs4-devel >= 2:4.3.0
-BuildRequires:  kdevplatform4-devel >= 4:1.0.0
-BuildRequires:  jpeg-devel
-BuildRequires:  png-devel 
-BuildRequires:  X11-devel
-BuildRequires:  libart_lgpl-devel
-BuildRequires:  flex
-BuildRequires:  graphviz
-BuildRequires:  db-devel
-BuildRequires:  subversion-devel
-BuildRequires:  apr-devel
-BuildRequires:  apr-util-devel
-BuildRequires:	automoc
+BuildRequires:  kdelibs4-devel >= 2:4.5.0
+BuildRequires:  kdevplatform4-devel >= 4:1.1.60
+BuildRequires:	kdebase4-workspace-devel
 %if %compile_apidox
 BuildRequires:  doxygen
 %endif
-BuildRequires:  check-devel
-BuildRequires:  cppunit-devel
-BuildRequires:  kdebase4-workspace-devel
 Requires:      enscript 
 Requires:      gcc-c++ 
 Requires:      gcc-cpp 
@@ -59,7 +49,7 @@ Requires:      ctags
 Requires:      png-devel libart_lgpl-devel libtool
 Requires:      cmake
 Requires:      awk
-Requires:      kdevplatform4 >= 4:1.0.0
+Requires:      kdevplatform4 >= 4:1.1.60
 Conflicts:     mandrake-mime <= 0.4-5mdk
 Obsoletes:     kdevelop <= 4:3.5.3-2
 Obsoletes:     %{_lib}kdevelop3 <= 4:3.5.3-2
@@ -93,35 +83,35 @@ KDevelop manages or provides:
 %files -f %name.lang
 %defattr(-,root,root) 
 %{_kde_bindir}/kdevelop
-%{_kde_bindir}/kdevelop.bin
-%{_kde_datadir}/kde4/services/*.desktop
+%{_kde_services}/*.desktop
 %{_kde_appsdir}/kdevcmakebuilder
-%{_kde_appsdir}/kdevcmakemanager
-%{_kde_appsdir}/kdevcustommakemanager
-%{_kde_appsdir}/kdevelop
-%{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevgdb
-%{_kde_appsdir}/kdevappwizard/templates/*
+%{_kde_appsdir}/kdevcmakemanager
+%{_kde_appsdir}/kdevappwizard
+%{_kde_appsdir}/kdevcustommakemanager
+%{_kde_appsdir}/kdevcppsupport
+%{_kde_appsdir}/kdevelop
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/config/kdeveloprc
 %{_kde_datadir}/mime/packages/kdevelop.xml
 %{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
 %{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
+%{_kde_libdir}/kde4/kdevastyle.so
 %{_kde_libdir}/kde4/kdevcmakebuilder.so
-%{_kde_libdir}/kde4/kdevcmakemanager.so
 %{_kde_libdir}/kde4/kdevcmakedocumentation.so
+%{_kde_libdir}/kde4/kdevcmakemanager.so
 %{_kde_libdir}/kde4/kdevcpplanguagesupport.so
 %{_kde_libdir}/kde4/kdevcustommakemanager.so
-%{_kde_libdir}/kde4/kdevmakebuilder.so
-%{_kde_libdir}/kde4/kdevastyle.so
-%{_kde_libdir}/kde4/kdevindent.so
 %{_kde_libdir}/kde4/kdevgdb.so
+%{_kde_libdir}/kde4/kdevindent.so
+%{_kde_libdir}/kde4/kdevkdeprovider.so
+%{_kde_libdir}/kde4/kdevmakebuilder.so
 %{_kde_libdir}/kde4/kdevqthelp.so
 %{_kde_libdir}/libkdev4cmakecommon.so
+%{_kde_libdir}/libkdev4cpprpp.so
 %{_kde_libdir}/libkdev4cppduchain.so
 %{_kde_libdir}/libkdev4cppparser.so
-%{_kde_libdir}/libkdev4cpprpp.so
 
 #------------------------------------------------
 
@@ -156,7 +146,8 @@ Documentation kdevelop.
 #------------------------------------------------
 
 %prep
-%setup -q -n kdevelop-%version
+%setup -q -n kdevelop-devel-kdevelop
+%patch0 -p0
 
 %build
 %cmake_kde4
