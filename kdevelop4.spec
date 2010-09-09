@@ -18,7 +18,7 @@
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
 Version:        4.1.60
-Release:        %mkrel -c %gitver 1
+Release:        %mkrel -c %gitver 2
 Epoch:          4
 URL:            http://www.kdevelop.org/
 #Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
@@ -30,6 +30,7 @@ License:        GPL
 BuildRequires:  kdelibs4-devel >= 2:4.5.0
 BuildRequires:  kdevplatform4-devel >= 4:1.1.60
 BuildRequires:	kdebase4-workspace-devel
+BuildRequires:  kdeutils4-devel
 %if %compile_apidox
 BuildRequires:  doxygen
 %endif
@@ -91,6 +92,7 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevcustommakemanager
 %{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevelop
+%{_kde_appsdir}/kdevokteta
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/config/kdeveloprc
@@ -107,6 +109,7 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevindent.so
 %{_kde_libdir}/kde4/kdevkdeprovider.so
 %{_kde_libdir}/kde4/kdevmakebuilder.so
+%{_kde_libdir}/kde4/kdevokteta.so
 %{_kde_libdir}/kde4/kdevqthelp.so
 %{_kde_libdir}/libkdev4cmakecommon.so
 %{_kde_libdir}/libkdev4cpprpp.so
