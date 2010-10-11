@@ -13,12 +13,12 @@
 %define lib_name %mklibname kdevelop4 %lib_major
 %define old_lib_major 2
 %define old_lib_name %mklibname kdevelop4 %old_lib_major
-%define gitver git20100906
+%define gitver git20101010
 
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
 Version:        4.1.60
-Release:        %mkrel -c %gitver 2
+Release:        %mkrel -c %gitver 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
 #Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
@@ -30,7 +30,7 @@ License:        GPL
 BuildRequires:  kdelibs4-devel >= 2:4.5.0
 BuildRequires:  kdevplatform4-devel >= 4:1.1.60
 BuildRequires:	kdebase4-workspace-devel
-BuildRequires:  kdeutils4-devel
+BuildRequires:	kdesdk4-devel >= 1:4.5.71
 %if %compile_apidox
 BuildRequires:  doxygen
 %endif
@@ -149,8 +149,7 @@ Documentation kdevelop.
 #------------------------------------------------
 
 %prep
-%setup -q -n kdevelop-devel-kdevelop
-%patch0 -p0
+%setup -q -n kdevelop-kdevelop
 
 %build
 %cmake_kde4
