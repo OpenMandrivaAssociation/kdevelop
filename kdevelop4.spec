@@ -50,6 +50,7 @@ Requires:      ctags
 Requires:      png-devel libart_lgpl-devel libtool
 Requires:      cmake
 Requires:      awk
+Requires:      git
 Requires:      kdevplatform4 >= 4:1.1.60
 Conflicts:     mandrake-mime <= 0.4-5mdk
 Obsoletes:     kdevelop <= 4:3.5.3-2
