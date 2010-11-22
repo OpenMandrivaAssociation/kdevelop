@@ -50,7 +50,7 @@ Requires:      png-devel libart_lgpl-devel libtool
 Requires:      cmake
 Requires:      awk
 Requires:      git
-Requires:      kdevplatform4 >= 4:1.1.60
+Requires:      kdevplatform4 >= 4:1.1.60-0.%{gitver}
 Conflicts:     mandrake-mime <= 0.4-5mdk
 Obsoletes:     kdevelop <= 4:3.5.3-2
 Obsoletes:     %{_lib}kdevelop3 <= 4:3.5.3-2
