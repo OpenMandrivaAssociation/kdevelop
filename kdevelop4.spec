@@ -13,21 +13,19 @@
 %define lib_name %mklibname kdevelop4 %lib_major
 %define old_lib_major 2
 %define old_lib_name %mklibname kdevelop4 %old_lib_major
-%define gitver git20101121
 
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
-Version:        4.1.60
-Release:        %mkrel -c %gitver 1
+Version:        4.1.80
+Release:        %mkrel 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
-#Source:         ftp://ftp.kde.org/pub/kde/stable/%version/src/kdevelop-%version.tar.bz2
-Source:		kdevelop-%{version}-%{gitver}.tar.xz
+Source:		http://fr2.rpmfind.net/linux/KDE/unstable/kdevelop/4.1.80/src/kdevelop-%{version}.tar.bz2
 Group: 		    Development/C++
 BuildRoot:	    %_tmppath/%name-%version-%release-root
 License:        GPL
 BuildRequires:  kdelibs4-devel >= 2:4.5.0
-BuildRequires:  kdevplatform4-devel >= 4:1.1.60-0.%{gitver}
+BuildRequires:  kdevplatform4-devel >= 4:1.1.80
 BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	kdesdk4-devel >= 1:4.5.71
 %if %compile_apidox
@@ -50,7 +48,7 @@ Requires:      png-devel libart_lgpl-devel libtool
 Requires:      cmake
 Requires:      awk
 Requires:      git
-Requires:      kdevplatform4 >= 4:1.1.60-0.%{gitver}
+Requires:      kdevplatform4 >= 4:1.1.80
 Conflicts:     mandrake-mime <= 0.4-5mdk
 Obsoletes:     kdevelop <= 4:3.5.3-2
 Obsoletes:     %{_lib}kdevelop3 <= 4:3.5.3-2
