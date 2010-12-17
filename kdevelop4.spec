@@ -20,7 +20,7 @@ Version:        4.1.80
 Release:        %mkrel 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
-Source:		http://fr2.rpmfind.net/linux/KDE/unstable/kdevelop/4.1.80/src/kdevelop-%{version}.tar.bz2
+Source:		http://fr2.rpmfind.net/linux/KDE/unstable/kdevelop/%{version}/src/kdevelop-%{version}.tar.bz2
 Group: 		    Development/C++
 BuildRoot:	    %_tmppath/%name-%version-%release-root
 License:        GPL
