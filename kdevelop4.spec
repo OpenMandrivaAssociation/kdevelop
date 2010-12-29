@@ -110,6 +110,7 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevmanpage.so
 %{_kde_libdir}/kde4/kdevokteta.so
 %{_kde_libdir}/kde4/kdevqthelp.so
+%{_kde_libdir}/kde4/kdevqthelp_config.so
 %{_kde_libdir}/libkdev4cmakecommon.so
 %{_kde_libdir}/libkdev4cpprpp.so
 %{_kde_libdir}/libkdev4cppduchain.so
