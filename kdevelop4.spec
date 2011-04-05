@@ -16,8 +16,8 @@
 
 Name: 		    kdevelop4
 Summary: 	    Integrated Development Environment for C++/C
-Version:        4.2.0
-Release:        %mkrel 2
+Version:        4.2.1
+Release:        %mkrel 1
 Epoch:          4
 URL:            http://www.kdevelop.org/
 Source:		http://fr2.rpmfind.net/linux/KDE/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.bz2
