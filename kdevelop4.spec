@@ -82,6 +82,7 @@ KDevelop manages or provides:
 %files -f %name.lang
 %defattr(-,root,root) 
 %{_kde_bindir}/kdevelop
+%{_kde_bindir}/kdevelop_attach
 %{_kde_services}/*.desktop
 %{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevgdb
@@ -92,6 +93,7 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevelop
 %{_kde_appsdir}/kdevokteta
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
+%{_kde_datadir}/applications/kde4/kdevelop_ps.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/config/kdeveloprc
 %{_kde_datadir}/mime/packages/kdevelop.xml
@@ -103,6 +105,8 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevcmakemanager.so
 %{_kde_libdir}/kde4/kdevcpplanguagesupport.so
 %{_kde_libdir}/kde4/kdevcustommakemanager.so
+%{_kde_libdir}/kde4/kdevcustomscript.so
+%{_kde_libdir}/kde4/krunner_kdevelopsessions.so
 %{_kde_libdir}/kde4/kdevgdb.so
 %{_kde_libdir}/kde4/kdevkdeprovider.so
 %{_kde_libdir}/kde4/kdevmakebuilder.so
