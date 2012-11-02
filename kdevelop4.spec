@@ -82,6 +82,7 @@ KDevelop manages or provides:
 %files -f %name.lang
 %defattr(-,root,root) 
 %{_kde_bindir}/kdevelop
+%{_kde_bindir}/kdevelop!
 %{_kde_services}/*.desktop
 %{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevgdb
@@ -91,10 +92,13 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevelop
 %{_kde_appsdir}/kdevokteta
+%{_kde_appsdir}/plasma/plasmoids/kdevelopsessions
+%{_kde_appsdir}/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
 %{_kde_datadir}/applications/kde4/kdevelop.desktop
 %{_kde_datadir}/applications/kde4/kdevelop_ps.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/config/kdeveloprc
+%{_kde_datadir}/config/kdevelop-qthelp.knsrc
 %{_kde_datadir}/mime/packages/kdevelop.xml
 %{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
 %{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
@@ -113,6 +117,7 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevokteta.so
 %{_kde_libdir}/kde4/kdevqthelp.so
 %{_kde_libdir}/kde4/kdevqthelp_config.so
+%{_kde_libdir}/kde4/plasma_engine_kdevelopsessions.so
 %{_kde_libdir}/libkdev4cmakecommon.so
 %{_kde_libdir}/libkdev4cpprpp.so
 %{_kde_libdir}/libkdev4cppduchain.so
