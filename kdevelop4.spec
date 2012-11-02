@@ -82,7 +82,6 @@ KDevelop manages or provides:
 %files -f %name.lang
 %defattr(-,root,root) 
 %{_kde_bindir}/kdevelop
-%{_kde_bindir}/kdevelop_attach
 %{_kde_services}/*.desktop
 %{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevgdb
