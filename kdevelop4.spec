@@ -4,54 +4,37 @@
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
 
+# We cannot do it when debug is set to nil like in 2012.1
 %if %unstable
-%define dont_strip 1
+#define dont_strip 1
 %endif
 
-%define lib_name_orig libkdevelop4
-%define lib_major 3
-%define lib_name %mklibname kdevelop4 %lib_major
-%define old_lib_major 2
-%define old_lib_name %mklibname kdevelop4 %old_lib_major
+%define kdevplatform_version 4:1.%(echo %{version} | cut -d. -f2,3)
 
-Name: 		    kdevelop4
-Summary: 	    Integrated Development Environment for C++/C
-Version:        4.4.0
-Release:        1
-Epoch:          4
-URL:            http://www.kdevelop.org/
-Source:		http://fr2.rpmfind.net/linux/KDE/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.bz2
-Group: 		    Development/C++
-BuildRoot:	    %_tmppath/%name-%version-%release-root
-License:        GPL
-BuildRequires:  kdelibs4-devel >= 2:4.5.0
-BuildRequires:  kdevplatform4-devel >= 4:1.4.0
+Name:		kdevelop4
+Summary:	Integrated Development Environment for C++/C
+Version:	4.4.1
+Release:	1
+Epoch:		4
+Group: 		Development/C++
+License:	GPL
+URL:		http://www.kdevelop.org/
+Source0:	http://fr2.rpmfind.net/linux/KDE/unstable/kdevelop/%{version}/src/kdevelop-%{version}.tar.bz2
+Source1:	%{name}.rpmlintrc
+
+BuildRequires:	kdelibs4-devel
+BuildRequires:	kdevplatform4-devel >= %{kdevplatform_version}
 BuildRequires:	kdebase4-workspace-devel
-BuildRequires:	kdesdk4-devel >= 1:4.5.71
-%if %compile_apidox
-BuildRequires:  doxygen
+BuildRequires:	kdesdk4-devel
+
+%if %{compile_apidox}
+BuildRequires:	doxygen
 %endif
-Requires:      enscript 
-Requires:      gcc-c++ 
-Requires:      gcc-cpp 
-Requires:      openssl-devel
-Requires:      libx11-devel
-Requires:      jpeg-devel 
-Requires:      qt4-devel >= 4.2
-Requires:      make 
-Requires:      perl 
-Requires:      sgml-tools 
-Requires:      gettext 
-Requires:      zlib-devel
-Requires:      ctags
-Requires:      png-devel libart_lgpl-devel libtool
-Requires:      cmake
-Requires:      awk
-Requires:      git
-Requires:      kdevplatform4 >= 4:1.1.80
-Conflicts:     mandrake-mime <= 0.4-5mdk
-Obsoletes:     kdevelop <= 4:3.5.3-2
-Obsoletes:     %{_lib}kdevelop3 <= 4:3.5.3-2
+Requires:	cmake
+Requires:	git
+Requires:	gdb
+Requires:	kdevplatform4 >= %{kdevplatform_version}
+Suggests:	plasma-applet-kdevelopsessions
 
 %description
 The KDevelop Integrated Development Environment provides many features that
@@ -79,11 +62,10 @@ KDevelop manages or provides:
    * The inclusion of any other program you need for development by adding it
      to the "Tools" menu according to your individual needs.
 
-%files -f %name.lang
-%defattr(-,root,root) 
-%{_kde_bindir}/kdevelop
-%{_kde_bindir}/kdevelop!
-%{_kde_services}/*.desktop
+%files -f %{name}.lang
+%{_kde_bindir}/*
+%{_kde_services}/kcm_kdev*.desktop
+%{_kde_services}/kdev*.desktop
 %{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevgdb
 %{_kde_appsdir}/kdevcmakemanager
@@ -92,10 +74,7 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevelop
 %{_kde_appsdir}/kdevokteta
-%{_kde_appsdir}/plasma/plasmoids/kdevelopsessions
-%{_kde_appsdir}/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
-%{_kde_datadir}/applications/kde4/kdevelop.desktop
-%{_kde_datadir}/applications/kde4/kdevelop_ps.desktop
+%{_kde_applicationsdir}/*.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/config/kdeveloprc
 %{_kde_datadir}/config/kdevelop-qthelp.knsrc
@@ -108,8 +87,6 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevcmakemanager.so
 %{_kde_libdir}/kde4/kdevcpplanguagesupport.so
 %{_kde_libdir}/kde4/kdevcustommakemanager.so
-%{_kde_libdir}/kde4/kdevcustomscript.so
-%{_kde_libdir}/kde4/krunner_kdevelopsessions.so
 %{_kde_libdir}/kde4/kdevgdb.so
 %{_kde_libdir}/kde4/kdevkdeprovider.so
 %{_kde_libdir}/kde4/kdevmakebuilder.so
@@ -117,41 +94,54 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevokteta.so
 %{_kde_libdir}/kde4/kdevqthelp.so
 %{_kde_libdir}/kde4/kdevqthelp_config.so
-%{_kde_libdir}/kde4/plasma_engine_kdevelopsessions.so
+%{_kde_libdir}/kde4/kdevcustomscript.so
+%{_kde_libdir}/kde4/krunner_kdevelopsessions.so
 %{_kde_libdir}/libkdev4cmakecommon.so
 %{_kde_libdir}/libkdev4cpprpp.so
 %{_kde_libdir}/libkdev4cppduchain.so
 %{_kde_libdir}/libkdev4cppparser.so
 
 #------------------------------------------------
+%package -n plasma-dataengine-kdevelopsessions
+Summary:	Show KDevelop sessions
+Group:		Graphical desktop/KDE
+Requires:	kdebase4-workspace
+Requires:	%{name} >= %{EVRD}
 
+%description -n plasma-dataengine-kdevelopsessions
+Show KDevelop sessions.
+
+%files -n plasma-dataengine-kdevelopsessions
+%{_kde_libdir}/kde4/plasma_engine_kdevelopsessions.so
+%{_kde_services}/plasma-dataengine-kdevelopsessions.desktop
+%{_kde_appsdir}/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
+
+#------------------------------------------------
+%package -n plasma-applet-kdevelopsessions
+Summary:	Show KDevelop sessions
+Group:		Graphical desktop/KDE
+Requires:	kdebase4-workspace
+Requires:	plasma-dataengine-kdevelopsessions >= %{EVRD}
+BuildArch:	noarch
+
+%description -n plasma-applet-kdevelopsessions
+Show KDevelop sessions.
+
+%files -n plasma-applet-kdevelopsessions
+%{_kde_services}/plasma-applet-kdevelopsessions.desktop
+%{_kde_appsdir}/plasma/plasmoids/kdevelopsessions
+
+#------------------------------------------------
 %package devel
-Summary: Development files for kdevelop
-Group: Development/KDE and Qt
-
-Obsoletes: %lib_name-devel < 3.96.1
-Obsoletes: %{_lib}kdevelop-devel <= 4:3.5.3-2
+Summary:	Development files for kdevelop
+Group:		Development/KDE and Qt
 
 %description devel
 Development files for kdevelop.
 
 %files devel
-%defattr(-,root,root)
 %{_kde_appsdir}/cmake/modules/FindKDevelop.cmake
 %{_kde_includedir}/kdevelop
-
-#------------------------------------------------
-
-%package doc
-Summary: Development files for kdevelop
-Group: Development/KDE and Qt
-Obsoletes: kdevelop-doc <= 4:3.5.3-2
-
-%description doc
-Documentation kdevelop.
-
-%files doc
-%defattr(-,root,root)
 
 #------------------------------------------------
 
@@ -162,16 +152,12 @@ Documentation kdevelop.
 %cmake_kde4
 %make
 
-%if %compile_apidox
+%if %{compile_apidox}
 make apidox
 %endif
 
 %install
-rm -fr %buildroot
 %makeinstall_std -C build
 
-%find_lang %name --all-name --with-kde 
+%find_lang %{name} --all-name --with-html
 
-
-%clean
-rm -fr %buildroot
