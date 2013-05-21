@@ -11,14 +11,14 @@
 
 %define kdevplatform_version 4:1.%(echo %{version} | cut -d. -f2,3)
 
-Name:		kdevelop4
 Summary:	Integrated Development Environment for C++/C
+Name:		kdevelop4
 Version:	4.4.1
 Release:	1
 Epoch:		4
-Group: 		Development/C++
-License:	GPL
-URL:		http://www.kdevelop.org/
+Group:		Development/C++
+License:	GPLv2
+Url:		http://www.kdevelop.org/
 Source0:	http://fr2.rpmfind.net/linux/KDE/unstable/kdevelop/%{version}/src/kdevelop-%{version}.tar.bz2
 Source1:	%{name}.rpmlintrc
 
@@ -26,7 +26,6 @@ BuildRequires:	kdelibs4-devel
 BuildRequires:	kdevplatform4-devel >= %{kdevplatform_version}
 BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	kdesdk4-devel
-
 %if %{compile_apidox}
 BuildRequires:	doxygen
 %endif
@@ -146,7 +145,7 @@ Development files for kdevelop.
 #------------------------------------------------
 
 %prep
-%setup -q -n kdevelop-%{version}
+%setup -qn kdevelop-%{version}
 
 %build
 %cmake_kde4
