@@ -13,13 +13,13 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop4
-Version:	4.4.1
-Release:	5
+Version:	4.6.0
+Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
 Url:		http://www.kdevelop.org/
-Source0:	http://fr2.rpmfind.net/linux/KDE/unstable/kdevelop/%{version}/src/kdevelop-%{version}.tar.bz2
+Source0:	http://fr2.rpmfind.net/linux/KDE/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	kdelibs4-devel
