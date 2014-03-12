@@ -25,7 +25,7 @@ Source1:	%{name}.rpmlintrc
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdevplatform4-devel >= %{kdevplatform_version}
 BuildRequires:	kdebase4-workspace-devel
-BuildRequires:	kdesdk4-devel
+BuildRequires:	okteta-devel
 %if %{compile_apidox}
 BuildRequires:	doxygen
 %endif
