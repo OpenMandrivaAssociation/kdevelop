@@ -13,19 +13,19 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop4
-Version:	4.4.1
-Release:	2
+Version:	4.6.0
+Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
 Url:		http://www.kdevelop.org/
-Source0:	http://fr2.rpmfind.net/linux/KDE/unstable/kdevelop/%{version}/src/kdevelop-%{version}.tar.bz2
+Source0:	http://fr2.rpmfind.net/linux/KDE/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdevplatform4-devel >= %{kdevplatform_version}
 BuildRequires:	kdebase4-workspace-devel
-BuildRequires:	kdesdk4-devel
+BuildRequires:	okteta-devel
 %if %{compile_apidox}
 BuildRequires:	doxygen
 %endif
@@ -65,31 +65,38 @@ KDevelop manages or provides:
 %{_kde_bindir}/*
 %{_kde_services}/kcm_kdev*.desktop
 %{_kde_services}/kdev*.desktop
-%{_kde_appsdir}/kdevcmakebuilder
 %{_kde_appsdir}/kdevgdb
-%{_kde_appsdir}/kdevcmakemanager
 %{_kde_appsdir}/kdevappwizard
 %{_kde_appsdir}/kdevcustommakemanager
 %{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevelop
 %{_kde_appsdir}/kdevokteta
+%{_kde_appsdir}/kdevfiletemplates
+%{_kde_appsdir}/kdevcodegen
 %{_kde_applicationsdir}/*.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/config/kdeveloprc
 %{_kde_datadir}/config/kdevelop-qthelp.knsrc
 %{_kde_datadir}/mime/packages/kdevelop.xml
 %{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
+%{_kde_libdir}/kde4/kcm_kdev_ninjabuilder.so
 %{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
+%{_kde_libdir}/kde4/kcm_kdev_cmakebuilder.so
+%{_kde_libdir}/kde4/kcm_kdevcustombuildsystem.so
 %{_kde_libdir}/kde4/kdevastyle.so
 %{_kde_libdir}/kde4/kdevcmakebuilder.so
 %{_kde_libdir}/kde4/kdevcmakedocumentation.so
 %{_kde_libdir}/kde4/kdevcmakemanager.so
 %{_kde_libdir}/kde4/kdevcpplanguagesupport.so
+%{_kde_libdir}/kde4/kdevcustombuildsystem.so
 %{_kde_libdir}/kde4/kdevcustommakemanager.so
+%{_kde_libdir}/kde4/kdevexecuteplasmoid.so
 %{_kde_libdir}/kde4/kdevgdb.so
+%{_kde_libdir}/kde4/kdevghprovider.so
 %{_kde_libdir}/kde4/kdevkdeprovider.so
 %{_kde_libdir}/kde4/kdevmakebuilder.so
 %{_kde_libdir}/kde4/kdevmanpage.so
+%{_kde_libdir}/kde4/kdevninja.so
 %{_kde_libdir}/kde4/kdevokteta.so
 %{_kde_libdir}/kde4/kdevqthelp.so
 %{_kde_libdir}/kde4/kdevqthelp_config.so
