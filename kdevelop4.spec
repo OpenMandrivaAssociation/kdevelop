@@ -14,7 +14,7 @@
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop4
 Version:	4.6.0
-Release:	3
+Release:	4
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
