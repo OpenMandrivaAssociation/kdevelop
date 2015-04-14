@@ -106,6 +106,10 @@ KDevelop manages or provides:
 %{_kde_libdir}/libkdev4cpprpp.so
 %{_kde_libdir}/libkdev4cppduchain.so
 %{_kde_libdir}/libkdev4cppparser.so
+%{_kde_libdir}/kde4/kcm_kdevcustomdefinesandincludes.so
+%{_kde_libdir}/kde4/kdevdefinesandincludesmanager.so
+%{_kde_libdir}/libkdevcompilerprovider.so
+%{_datadir}/apps/kdevmanpage/manpagedocumentation.css
 
 #------------------------------------------------
 %package -n plasma-dataengine-kdevelopsessions
