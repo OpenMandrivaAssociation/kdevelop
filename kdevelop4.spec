@@ -70,7 +70,6 @@ KDevelop manages or provides:
 %{_kde_appsdir}/kdevcustommakemanager
 %{_kde_appsdir}/kdevcppsupport
 %{_kde_appsdir}/kdevelop
-%{_kde_appsdir}/kdevokteta
 %{_kde_appsdir}/kdevfiletemplates
 %{_kde_appsdir}/kdevcodegen
 %{_kde_applicationsdir}/*.desktop
@@ -97,7 +96,6 @@ KDevelop manages or provides:
 %{_kde_libdir}/kde4/kdevmakebuilder.so
 %{_kde_libdir}/kde4/kdevmanpage.so
 %{_kde_libdir}/kde4/kdevninja.so
-%{_kde_libdir}/kde4/kdevokteta.so
 %{_kde_libdir}/kde4/kdevqthelp.so
 %{_kde_libdir}/kde4/kdevqthelp_config.so
 %{_kde_libdir}/kde4/kdevcustomscript.so
