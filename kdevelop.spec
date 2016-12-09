@@ -53,6 +53,7 @@ BuildRequires:  cmake(KDevelop-PG-Qt)
 BuildRequires:  cmake(KF5SysGuard)
 BuildRequires:	cmake(KF5Plasma)
 
+BuildRequires:	clang-devel
 BuildRequires:  kdevplatform-devel
 BuildRequires:	shared-mime-info
 
