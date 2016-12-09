@@ -41,6 +41,9 @@ BuildRequires:	cmake(KF5ThreadWeaver)
 BuildRequires:	cmake(KF5XmlGui)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5Crash)
+BuildRequires:  cmake(KF5Runner)
+
+BuildRequires:	cmake(OktetaKastenControllers)
 
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Concurrent)
@@ -48,6 +51,7 @@ BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5QuickWidgets)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:  pkgconfig(Qt5Help)
 
 BuildRequires:  cmake(KDevelop-PG-Qt)
 BuildRequires:  cmake(KF5SysGuard)
