@@ -12,28 +12,56 @@
 %define kdevplatform_version 4:1.%(echo %{version} | cut -d. -f2,3)
 
 Summary:	Integrated Development Environment for C++/C
-Name:		kdevelop4
-Version:	4.7.2
+Name:		kdevelop
+Version:	5.0.3
 Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
 Url:		http://www.kdevelop.org/
-Source0:	http://fr2.rpmfind.net/linux/KDE/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.xz
+Source0:	http://download.kde.org/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
+BuildRequires:	qt5-assistant
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5Declarative)
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5IconThemes)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5ItemModels)
+BuildRequires:	cmake(KF5ItemViews)
+BuildRequires:	cmake(KF5JobWidgets)
+BuildRequires:	cmake(KF5KCMUtils)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5NewStuff)
+BuildRequires:	cmake(KF5NotifyConfig)
+BuildRequires:	cmake(KF5Parts)
+BuildRequires:	cmake(KF5Service)
+BuildRequires:	cmake(KF5TextEditor)
+BuildRequires:	cmake(KF5ThreadWeaver)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5WindowSystem)
+BuildRequires:	cmake(KF5Crash)
 
-BuildRequires:	kdelibs4-devel
-BuildRequires:	kdevplatform4-devel >= %{kdevplatform_version}
-BuildRequires:	kdebase4-workspace-devel
-BuildRequires:	okteta-devel
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Concurrent)
+BuildRequires:	pkgconfig(Qt5Quick)
+BuildRequires:	pkgconfig(Qt5QuickWidgets)
+BuildRequires:	pkgconfig(Qt5WebKitWidgets)
+BuildRequires:	pkgconfig(Qt5Test)
+
+BuildRequires:  cmake(KDevelop-PG-Qt)
+BuildRequires:  cmake(KF5SysGuard)
+
+BuildRequires:  kdevplatform-devel
+
 %if %{compile_apidox}
 BuildRequires:	doxygen
 %endif
 Requires:	cmake
 Requires:	git
 Requires:	gdb
-Requires:	kdevplatform4 >= %{kdevplatform_version}
-Suggests:	plasma-applet-kdevelopsessions
+Requires:	kdevplatform >= %{kdevplatform_version}
+%rename	kdevelop4
 
 %description
 The KDevelop Integrated Development Environment provides many features that
@@ -62,52 +90,25 @@ KDevelop manages or provides:
      to the "Tools" menu according to your individual needs.
 
 %files -f %{name}.lang
-%{_kde_bindir}/*
-%{_kde_services}/kcm_kdev*.desktop
-%{_kde_services}/kdev*.desktop
-%{_kde_appsdir}/kdevgdb
-%{_kde_appsdir}/kdevappwizard
-%{_kde_appsdir}/kdevcustommakemanager
-%{_kde_appsdir}/kdevcppsupport
-%{_kde_appsdir}/kdevelop
-%{_kde_appsdir}/kdevfiletemplates
-%{_kde_appsdir}/kdevcodegen
-%{_kde_applicationsdir}/*.desktop
-%{_kde_iconsdir}/*/*/*/*
-%{_kde_datadir}/config/kdeveloprc
-%{_kde_datadir}/config/kdevelop-qthelp.knsrc
-%{_kde_datadir}/mime/packages/kdevelop.xml
-%{_kde_libdir}/kde4/kcm_kdev_makebuilder.so
-%{_kde_libdir}/kde4/kcm_kdev_ninjabuilder.so
-%{_kde_libdir}/kde4/kcm_kdevcmake_settings.so
-%{_kde_libdir}/kde4/kcm_kdev_cmakebuilder.so
-%{_kde_libdir}/kde4/kcm_kdevcustombuildsystem.so
-%{_kde_libdir}/kde4/kdevastyle.so
-%{_kde_libdir}/kde4/kdevcmakebuilder.so
-%{_kde_libdir}/kde4/kdevcmakedocumentation.so
-%{_kde_libdir}/kde4/kdevcmakemanager.so
-%{_kde_libdir}/kde4/kdevcpplanguagesupport.so
-%{_kde_libdir}/kde4/kdevcustombuildsystem.so
-%{_kde_libdir}/kde4/kdevcustommakemanager.so
-%{_kde_libdir}/kde4/kdevexecuteplasmoid.so
-%{_kde_libdir}/kde4/kdevgdb.so
-%{_kde_libdir}/kde4/kdevghprovider.so
-%{_kde_libdir}/kde4/kdevkdeprovider.so
-%{_kde_libdir}/kde4/kdevmakebuilder.so
-%{_kde_libdir}/kde4/kdevmanpage.so
-%{_kde_libdir}/kde4/kdevninja.so
-%{_kde_libdir}/kde4/kdevqthelp.so
-%{_kde_libdir}/kde4/kdevqthelp_config.so
-%{_kde_libdir}/kde4/kdevcustomscript.so
-%{_kde_libdir}/kde4/krunner_kdevelopsessions.so
-%{_kde_libdir}/libkdev4cmakecommon.so
-%{_kde_libdir}/libkdev4cpprpp.so
-%{_kde_libdir}/libkdev4cppduchain.so
-%{_kde_libdir}/libkdev4cppparser.so
-%{_kde_libdir}/kde4/kcm_kdevcustomdefinesandincludes.so
-%{_kde_libdir}/kde4/kdevdefinesandincludesmanager.so
-%{_kde_libdir}/libkdevcompilerprovider.so
-%{_datadir}/apps/kdevmanpage/manpagedocumentation.css
+%{_bindir}/*
+%{_iconsdir}/*/*/*/*
+%{_datadir}/applications/*.desktop
+%{_datadir}/mime/packages/kdevelop.xml
+%{_libdir}/libkdevcmakecommon.so
+%{_libdir}/libKDevClangPrivate.so.25
+%{_libdir}/qt5/plugins/kdevplatform
+%{_datadir}/kdevqmljssupport
+%{_datadir}/kdevelop
+%{_datadir}/kdevfiletemplates
+%{_datadir}/kdevcodegen
+%{_datadir}/kdevgdb
+%{_datadir}/kdevappwizard
+%{_datadir}/kdevmanpage
+%{_datadir}/kdevclangsupport
+%{_datadir}/kdevqmakebuilder
+%{_datadir}/knotifications5/kdevelop.notifyrc
+%{_datadir}/metainfo/org.kde.kdevelop.appdata.xml
+%{_datadir}/mime/packages/kdevelopinternal.xml
 
 #------------------------------------------------
 %package -n plasma-dataengine-kdevelopsessions
@@ -120,9 +121,7 @@ Requires:	%{name} >= %{EVRD}
 Show KDevelop sessions.
 
 %files -n plasma-dataengine-kdevelopsessions
-%{_kde_libdir}/kde4/plasma_engine_kdevelopsessions.so
-%{_kde_services}/plasma-dataengine-kdevelopsessions.desktop
-%{_kde_appsdir}/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
+%{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_kdevelopsessions.so
 
 #------------------------------------------------
 %package -n plasma-applet-kdevelopsessions
@@ -136,8 +135,10 @@ BuildArch:	noarch
 Show KDevelop sessions.
 
 %files -n plasma-applet-kdevelopsessions
-%{_kde_services}/plasma-applet-kdevelopsessions.desktop
-%{_kde_appsdir}/plasma/plasmoids/kdevelopsessions
+%{_libdir}/qt5/plugins/krunner_kdevelopsessions.so
+%{_datadir}/kservices5/*kdevelopsessions.desktop
+%{_datadir}/plasma/plasmoids/kdevelopsessions
+%{_datadir}/plasma/services/*.operations
 
 #------------------------------------------------
 %package devel
@@ -148,8 +149,8 @@ Group:		Development/KDE and Qt
 Development files for kdevelop.
 
 %files devel
-%{_kde_appsdir}/cmake/modules/FindKDevelop.cmake
-%{_kde_includedir}/kdevelop
+%{_libdir}/cmake/KDevelop
+%{_includedir}/kdevelop
 
 #------------------------------------------------
 
@@ -157,15 +158,15 @@ Development files for kdevelop.
 %setup -qn kdevelop-%{version}
 
 %build
-%cmake_kde4
-%make
+%cmake_kde5 -DBSDTAR=1
+%ninja
 
 %if %{compile_apidox}
 make apidox
 %endif
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 %find_lang %{name} --all-name --with-html
 

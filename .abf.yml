@@ -1,5 +1,2 @@
-removed_sources:
-  kdevelop-4.4.1.tar.bz2: 31bd10ffdbf2a6f2b3a75ecc8c1877d1bcc5b685
-  kdevelop-4.7.1.tar.xz: 9b4cf77b753f6847f10709bb616c55c8e515c53c
 sources:
-  kdevelop-4.7.2.tar.xz: c377eff02c2fe39aef3d49122af57c97ad7e930a
+  kdevelop-5.0.3.tar.xz: c642fe91620840c0de655b5a5aebff6bdf4b4912
