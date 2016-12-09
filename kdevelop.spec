@@ -51,8 +51,10 @@ BuildRequires:	pkgconfig(Qt5Test)
 
 BuildRequires:  cmake(KDevelop-PG-Qt)
 BuildRequires:  cmake(KF5SysGuard)
+BuildRequires:	cmake(KF5Plasma)
 
 BuildRequires:  kdevplatform-devel
+BuildRequires:	shared-mime-info
 
 %if %{compile_apidox}
 BuildRequires:	doxygen
