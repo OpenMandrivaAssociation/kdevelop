@@ -13,7 +13,7 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	5.0.3
+Version:	5.1.2
 Release:	1
 Epoch:		4
 Group:		Development/C++
@@ -42,9 +42,7 @@ BuildRequires:	cmake(KF5XmlGui)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5Crash)
 BuildRequires:  cmake(KF5Runner)
-
 BuildRequires:	cmake(OktetaKastenControllers)
-
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	pkgconfig(Qt5Quick)
@@ -52,11 +50,9 @@ BuildRequires:	pkgconfig(Qt5QuickWidgets)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(Qt5Help)
-
 BuildRequires:  cmake(KDevelop-PG-Qt)
 BuildRequires:  cmake(KF5SysGuard)
 BuildRequires:	cmake(KF5Plasma)
-
 BuildRequires:	clang-devel
 BuildRequires:  kdevplatform-devel
 BuildRequires:	shared-mime-info
