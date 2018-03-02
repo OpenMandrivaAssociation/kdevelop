@@ -27,6 +27,7 @@ Source0:	http://download.kde.org/stable/kdevelop/%{version}/src/kdevelop-%{versi
 Source1:	%{name}.rpmlintrc
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
 BuildRequires:	qt5-assistant
+BuildRequires:	boost-devel
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5Declarative)
 BuildRequires:	cmake(KF5DocTools)
@@ -53,11 +54,15 @@ BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5QuickWidgets)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
+BuildRequires:	pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(Qt5Help)
 BuildRequires:  cmake(KDevelop-PG-Qt)
 BuildRequires:  cmake(KF5SysGuard)
 BuildRequires:	cmake(KF5Plasma)
+BuildRequires:	cmake(Grantlee5)
+BuildRequires:  cmake(LibKompareDiff2)
+BuildRequires: cmake(KDEExperimentalPurpose)
 BuildRequires:	clang-devel
 BuildRequires:	shared-mime-info
 
