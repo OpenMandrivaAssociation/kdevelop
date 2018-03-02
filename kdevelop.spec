@@ -137,7 +137,6 @@ KDevelop manages or provides:
 %package -n plasma-dataengine-kdevelopsessions
 Summary:	Show KDevelop sessions
 Group:		Graphical desktop/KDE
-Requires:	kdebase4-workspace
 Requires:	%{name} >= %{EVRD}
 
 %description -n plasma-dataengine-kdevelopsessions
@@ -150,7 +149,6 @@ Show KDevelop sessions.
 %package -n plasma-applet-kdevelopsessions
 Summary:	Show KDevelop sessions
 Group:		Graphical desktop/KDE
-Requires:	kdebase4-workspace
 Requires:	plasma-dataengine-kdevelopsessions >= %{EVRD}
 BuildArch:	noarch
 
