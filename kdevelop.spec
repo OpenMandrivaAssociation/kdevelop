@@ -419,6 +419,10 @@ Development files for kdevplatform.
 %apply_patches
 
 %build
+%ifarch %{ix86}
+export CC=gcc
+export CXX=g++
+%endif
 %cmake_kde5 -DBUILD_TESTING=OFF -DBSDTAR=1
 %ninja
 
