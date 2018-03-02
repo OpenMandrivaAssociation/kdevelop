@@ -65,6 +65,7 @@ BuildRequires:  cmake(LibKompareDiff2)
 BuildRequires: cmake(KDEExperimentalPurpose)
 BuildRequires:	clang-devel
 BuildRequires:	shared-mime-info
+BuildRequires:	subversion-devel
 
 %if %{compile_apidox}
 BuildRequires:	doxygen
@@ -120,6 +121,7 @@ KDevelop manages or provides:
 %{_datadir}/kdevfiletemplates
 %{_datadir}/kdevcodegen
 %{_datadir}/kdevgdb
+%{_datadir}/kdevlldb
 %{_datadir}/kdevappwizard
 %{_datadir}/kdevmanpage
 %{_datadir}/kdevclangsupport
