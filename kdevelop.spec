@@ -9,11 +9,15 @@
 #define dont_strip 1
 %endif
 
-%define kdevplatform_version 4:1.%(echo %{version} | cut -d. -f2,3)
+%define libname_orig libkdevplatform4
+%define major   5
+%define libname %mklibname kdevplatform %{major}
+%define old_major 2
+%define old_libname %mklibname kdevplatform4 %{old_major}
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	5.1.2
+Version:	5.2.1
 Release:	1
 Epoch:		4
 Group:		Development/C++
@@ -21,6 +25,7 @@ License:	GPLv2
 Url:		http://www.kdevelop.org/
 Source0:	http://download.kde.org/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
+Patch1:		kdevplatform-5.0.3-bsdtar.patch
 BuildRequires:	qt5-assistant
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5Declarative)
@@ -54,7 +59,6 @@ BuildRequires:  cmake(KDevelop-PG-Qt)
 BuildRequires:  cmake(KF5SysGuard)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	clang-devel
-BuildRequires:  kdevplatform-devel
 BuildRequires:	shared-mime-info
 
 %if %{compile_apidox}
@@ -63,7 +67,7 @@ BuildRequires:	doxygen
 Requires:	cmake
 Requires:	git
 Requires:	gdb
-Requires:	kdevplatform >= %{kdevplatform_version}
+Requires:	kdevplatform >= %{EVRD}
 %rename	kdevelop4
 
 %description
@@ -93,13 +97,19 @@ KDevelop manages or provides:
      to the "Tools" menu according to your individual needs.
 
 %files -f %{name}.lang
-%{_bindir}/*
-%{_iconsdir}/*/*/*/*
+%{_kde5_sysconfdir}/xdg/kdevelop.categories
+%{_bindir}/%{name}*
+%{_bindir}/kdev_includepathsconverter
 %{_datadir}/applications/*.desktop
-%{_datadir}/mime/packages/kdevelop.xml
+%{_datadir}/mime/packages/kdev*.xml
 %{_libdir}/libkdevcmakecommon.so
-%{_libdir}/libKDevClangPrivate.so.25
+%{_libdir}/libKDevClangPrivate.so.30
 %{_libdir}/qt5/plugins/kdevplatform
+%{_kde5_iconsdir}/hicolor/*/apps/%{name}.png
+%{_kde5_iconsdir}/hicolor/*/apps/kdevgh.png
+%{_kde5_iconsdir}/hicolor/*/apps/cmake.png
+%{_kde5_iconsdir}/hicolor/*/apps/cppcheck.png
+%{_kde5_iconsdir}/hicolor/*/apps/github-*.png
 %{_datadir}/kdevqmljssupport
 %{_datadir}/kdevelop
 %{_datadir}/kdevfiletemplates
@@ -111,7 +121,10 @@ KDevelop manages or provides:
 %{_datadir}/kdevqmakebuilder
 %{_datadir}/knotifications5/kdevelop.notifyrc
 %{_datadir}/metainfo/org.kde.kdevelop.appdata.xml
-%{_datadir}/mime/packages/kdevelopinternal.xml
+# Exclude kdevplatform folders
+%exclude %{_kde5_datadir}/kdevplatform/
+%exclude %{_kde5_datadir}/kdevcodegen/
+%exclude %{_kde5_datadir}/kdevcodeutils/
 
 #------------------------------------------------
 %package -n plasma-dataengine-kdevelopsessions
@@ -156,12 +169,252 @@ Development files for kdevelop.
 %{_includedir}/kdevelop
 
 #------------------------------------------------
+%package -n kdevplatform
+Summary:	Files for kdevplatform
+Group:		Development/KDE and Qt
+Obsoletes:      kdevplatform4
+
+%files -n kdevplatform 
+%{_kde5_sysconfdir}/xdg/kdevplatform.categories
+%{_bindir}/kdev_dbus_socket_transformer
+%{_bindir}/kdev_format_source
+%{_bindir}/kdevplatform_shell_environment.sh
+%{_datadir}/kdevcodegen
+%{_datadir}/kdevcodeutils
+%{_datadir}/kdevplatform
+%{_iconsdir}/hicolor/*/apps/subversion.*
+%{_iconsdir}/hicolor/*/apps/bazaar.png
+%{_iconsdir}/hicolor/*/apps/git.*
+%{_iconsdir}/hicolor/*/actions/breakpoint.*
+%{_libdir}/qt5/plugins/grantlee/5.1/kdev_filters.so
+%{_libdir}/qt5/qml/org/kde/kdevplatform/libkdevelopdashboarddeclarativeplugin.so
+%{_libdir}/qt5/qml/org/kde/kdevplatform/qmldir
+%{_datadir}/kservicetypes5/kdevelopplugin.desktop
+%dir %{_qt5_plugindir}/kdevplatform
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatforminterfaces_major 52
+%define libkdevplatforminterfaces %mklibname KDevPlatformInterfaces %{kdevplatforminterfaces_major}
+
+%package -n %{libkdevplatforminterfaces}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatforminterfaces}
+KF5 library.
+
+%files -n %{libkdevplatforminterfaces}
+%{_libdir}/libKDevPlatformInterfaces.so.%{kdevplatforminterfaces_major}*
+%{_libdir}/libKDevPlatformInterfaces.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformlanguage_major 52
+%define libkdevplatformlanguage %mklibname KDevPlatformLanguage %{kdevplatformlanguage_major}
+
+%package -n %{libkdevplatformlanguage}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformlanguage}
+KF5 library.
+
+%files -n %{libkdevplatformlanguage}
+%{_libdir}/libKDevPlatformLanguage.so.%{kdevplatformlanguage_major}*
+%{_libdir}/libKDevPlatformLanguage.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformoutputview_major 52
+%define libkdevplatformoutputview %mklibname KDevPlatformOutputView %{kdevplatformoutputview_major}
+
+%package -n %{libkdevplatformoutputview}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformoutputview}
+KF5 library.
+
+%files -n %{libkdevplatformoutputview}
+%{_libdir}/libKDevPlatformOutputView.so.%{kdevplatformoutputview_major}*
+%{_libdir}/libKDevPlatformOutputView.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformproject_major 52
+%define libkdevplatformproject %mklibname KDevPlatformProject %{kdevplatformproject_major}
+
+%package -n %{libkdevplatformproject}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformproject}
+KF5 library.
+
+%files -n %{libkdevplatformproject}
+%{_libdir}/libKDevPlatformProject.so.%{kdevplatformproject_major}*
+%{_libdir}/libKDevPlatformProject.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformshell_major 52
+%define libkdevplatformshell %mklibname KDevPlatformShell %{kdevplatformshell_major}
+
+%package -n %{libkdevplatformshell}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformshell}
+KF5 library.
+
+%files -n %{libkdevplatformshell}
+%{_libdir}/libKDevPlatformShell.so.%{kdevplatformshell_major}*
+%{_libdir}/libKDevPlatformShell.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformutil_major 52
+%define libkdevplatformutil %mklibname KDevPlatformUtil %{kdevplatformutil_major}
+
+%package -n %{libkdevplatformutil}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformutil}
+KF5 library.
+
+%files -n %{libkdevplatformutil}
+%{_libdir}/libKDevPlatformUtil.so.%{kdevplatformutil_major}*
+%{_libdir}/libKDevPlatformUtil.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformvcs_major 52
+%define libkdevplatformvcs %mklibname KDevplatformVcs %{kdevplatformvcs_major}
+
+%package -n %{libkdevplatformvcs}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformvcs}
+KF5 library.
+
+%files -n %{libkdevplatformvcs}
+%{_libdir}/libKDevPlatformVcs.so.%{kdevplatformvcs_major}*
+%{_libdir}/libKDevPlatformVcs.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define sublime_major 52
+%define libsublime %mklibname KDevPlatformSublime %{sublime_major}
+
+%package -n %{libsublime}
+Summary:        KF5 library
+Group: System/Libraries
+
+%description -n %{libsublime}
+KF5 library.
+
+%files -n %{libsublime}
+%{_libdir}/libKDevPlatformSublime.so.%{sublime_major}*
+%{_libdir}/libKDevPlatformSublime.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformdebugger_major 52
+%define libkdevplatformdebugger %mklibname KDevPlatformDebugger %{kdevplatformdebugger_major}
+
+%package -n %{libkdevplatformdebugger}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformdebugger}
+KF5 library.
+
+%files -n %{libkdevplatformdebugger}
+%{_libdir}/libKDevPlatformDebugger.so.%{kdevplatformdebugger_major}*
+%{_libdir}/libKDevPlatformDebugger.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformdocumentation_major 52
+%define libkdevplatformdocumentation %mklibname KDevPlatformDocumentation %{kdevplatformdocumentation_major}
+
+%package -n %{libkdevplatformdocumentation}
+Summary:        KF5 library
+Group:          System/Libraries
+
+%description -n %{libkdevplatformdocumentation}
+KF5 library.
+
+%files -n %{libkdevplatformdocumentation}
+%{_libdir}/libKDevPlatformDocumentation.so.%{kdevplatformdocumentation_major}*
+%{_libdir}/libKDevPlatformDocumentation.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%define kdevplatformserialization_major 52
+%define libkdevplatformserialization %mklibname KDevPlatformSerialization %kdevplatformserialization_major
+
+%package -n %libkdevplatformserialization
+Summary: KF5 library
+Group: System/Libraries
+
+%description -n %libkdevplatformserialization
+KF5 library.
+
+%files -n %libkdevplatformserialization
+%_libdir/libKDevPlatformSerialization.so.%{kdevplatformserialization_major}*
+%_libdir/libKDevPlatformSerialization.so.%{version}
+
+#-----------------------------------------------------------------------------
+
+%package -n %{libname}-devel
+Summary:        Development files for kdevplatform
+Group:          Development/KDE and Qt
+
+Provides:       kdevplatform-devel = %{EVRD}
+
+Requires:       %{libkdevplatforminterfaces} = %{EVRD}
+Requires:       %{libkdevplatformlanguage} = %{EVRD}
+Requires:       %{libkdevplatformoutputview} = %{EVRD}
+Requires:       %{libkdevplatformproject} = %{EVRD}
+Requires:       %{libkdevplatformshell} = %{EVRD}
+Requires:       %{libkdevplatformutil} = %{EVRD}
+Requires:       %{libkdevplatformvcs} = %{EVRD}
+Requires:       %{libsublime} = %{EVRD}
+Requires:       %{libkdevplatformdebugger} = %{EVRD}
+Requires:       %{libkdevplatformdocumentation} = %{EVRD}
+Requires:       %{libkdevplatformserialization} = %{EVRD}
+
+%description -n %{libname}-devel
+Development files for kdevplatform.
+
+%files -n %{libname}-devel
+%{_libdir}/cmake/KDevPlatform
+%{_includedir}/kdevplatform
+%{_libdir}/libKDevPlatformSerialization.so
+%{_libdir}/libKDevPlatformInterfaces.so
+%{_libdir}/libKDevPlatformLanguage.so
+%{_libdir}/libKDevPlatformOutputView.so
+%{_libdir}/libKDevPlatformProject.so
+%{_libdir}/libKDevPlatformShell.so
+%{_libdir}/libKDevPlatformUtil.so
+%{_libdir}/libKDevPlatformVcs.so
+%{_libdir}/libKDevPlatformSublime.so
+%{_libdir}/libKDevPlatformDebugger.so
+%{_libdir}/libKDevPlatformDocumentation.so
+
+#-----------------------------------------------------------------------------
+
 
 %prep
 %setup -qn kdevelop-%{version}
+%apply_patches
 
 %build
-%cmake_kde5 -DBSDTAR=1
+%cmake_kde5 -DBUILD_TESTING=OFF -DBSDTAR=1
 %ninja
 
 %if %{compile_apidox}
@@ -172,4 +425,3 @@ make apidox
 %ninja_install -C build
 
 %find_lang %{name} --all-name --with-html
-
