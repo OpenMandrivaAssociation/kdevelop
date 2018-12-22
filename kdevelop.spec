@@ -64,6 +64,7 @@ BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(Grantlee5)
 BuildRequires:  cmake(LibKompareDiff2)
 BuildRequires: cmake(KDEExperimentalPurpose)
+BuildRequires:	llvm-devel
 BuildRequires:	clang-devel
 BuildRequires:	shared-mime-info
 BuildRequires:	subversion-devel
