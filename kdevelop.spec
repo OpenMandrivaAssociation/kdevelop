@@ -118,6 +118,8 @@ KDevelop manages or provides:
 %{_kde5_iconsdir}/hicolor/*/apps/cmake.png
 %{_kde5_iconsdir}/hicolor/*/apps/cppcheck.png
 %{_kde5_iconsdir}/hicolor/*/apps/github-*.png
+%{_kde5_iconsdir}/hicolor/*/apps/clazy.png
+%{_kde5_iconsdir}/hicolor/*/apps/qtlogo.svg
 %{_datadir}/kdevqmljssupport
 %{_datadir}/kdevelop
 %{_datadir}/kdevfiletemplates
