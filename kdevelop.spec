@@ -153,7 +153,6 @@ Show KDevelop sessions.
 Summary:	Show KDevelop sessions
 Group:		Graphical desktop/KDE
 Requires:	plasma-dataengine-kdevelopsessions >= %{EVRD}
-BuildArch:	noarch
 
 %description -n plasma-applet-kdevelopsessions
 Show KDevelop sessions.
