@@ -129,7 +129,6 @@ KDevelop manages or provides:
 %{_datadir}/kdevappwizard
 %{_datadir}/kdevmanpage
 %{_datadir}/kdevclangsupport
-%{_datadir}/kdevqmakebuilder
 %{_datadir}/knotifications5/kdevelop.notifyrc
 %{_datadir}/metainfo/org.kde.kdevelop.appdata.xml
 # Exclude kdevplatform folders
