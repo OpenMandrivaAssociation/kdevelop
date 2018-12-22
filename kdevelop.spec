@@ -40,6 +40,7 @@ BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5NewStuff)
 BuildRequires:	cmake(KF5NotifyConfig)
+BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(KF5Parts)
 BuildRequires:	cmake(KF5Service)
 BuildRequires:	cmake(KF5TextEditor)
@@ -63,6 +64,7 @@ BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(Grantlee5)
 BuildRequires:  cmake(LibKompareDiff2)
 BuildRequires: cmake(KDEExperimentalPurpose)
+BuildRequires:	llvm-devel
 BuildRequires:	clang-devel
 BuildRequires:	shared-mime-info
 BuildRequires:	subversion-devel
@@ -116,6 +118,8 @@ KDevelop manages or provides:
 %{_kde5_iconsdir}/hicolor/*/apps/cmake.png
 %{_kde5_iconsdir}/hicolor/*/apps/cppcheck.png
 %{_kde5_iconsdir}/hicolor/*/apps/github-*.png
+%{_kde5_iconsdir}/hicolor/*/apps/clazy.png
+%{_kde5_iconsdir}/hicolor/*/apps/qtlogo.svg
 %{_datadir}/kdevqmljssupport
 %{_datadir}/kdevelop
 %{_datadir}/kdevfiletemplates
@@ -178,6 +182,9 @@ Development files for kdevelop.
 Summary:	Files for kdevplatform
 Group:		Development/KDE and Qt
 Obsoletes:      kdevplatform4
+
+%description -n kdevplatform
+Kdevelop platform tools.
 
 %files -n kdevplatform 
 %{_kde5_sysconfdir}/xdg/kdevplatform.categories
