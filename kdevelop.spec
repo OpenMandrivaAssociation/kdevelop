@@ -179,6 +179,9 @@ Summary:	Files for kdevplatform
 Group:		Development/KDE and Qt
 Obsoletes:      kdevplatform4
 
+%description -n kdevplatform
+Kdevelop platform tools.
+
 %files -n kdevplatform 
 %{_kde5_sysconfdir}/xdg/kdevplatform.categories
 %{_bindir}/kdev_dbus_socket_transformer
