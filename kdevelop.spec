@@ -17,8 +17,8 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	5.2.1
-Release:	2
+Version:	5.3.1
+Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
@@ -109,7 +109,7 @@ KDevelop manages or provides:
 %{_datadir}/applications/*.desktop
 %{_datadir}/mime/packages/kdev*.xml
 %{_libdir}/libkdevcmakecommon.so
-%{_libdir}/libKDevClangPrivate.so.30
+%{_libdir}/libKDevClangPrivate.so.31
 %{_libdir}/qt5/plugins/kdevplatform
 %{_kde5_iconsdir}/hicolor/*/apps/%{name}.png
 %{_kde5_iconsdir}/hicolor/*/apps/kdevgh.png
@@ -199,7 +199,7 @@ Obsoletes:      kdevplatform4
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatforminterfaces_major 52
+%define kdevplatforminterfaces_major 53
 %define libkdevplatforminterfaces %mklibname KDevPlatformInterfaces %{kdevplatforminterfaces_major}
 
 %package -n %{libkdevplatforminterfaces}
@@ -215,7 +215,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformlanguage_major 52
+%define kdevplatformlanguage_major 53
 %define libkdevplatformlanguage %mklibname KDevPlatformLanguage %{kdevplatformlanguage_major}
 
 %package -n %{libkdevplatformlanguage}
@@ -231,7 +231,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformoutputview_major 52
+%define kdevplatformoutputview_major 53
 %define libkdevplatformoutputview %mklibname KDevPlatformOutputView %{kdevplatformoutputview_major}
 
 %package -n %{libkdevplatformoutputview}
@@ -247,7 +247,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformproject_major 52
+%define kdevplatformproject_major 53
 %define libkdevplatformproject %mklibname KDevPlatformProject %{kdevplatformproject_major}
 
 %package -n %{libkdevplatformproject}
@@ -263,7 +263,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformshell_major 52
+%define kdevplatformshell_major 53
 %define libkdevplatformshell %mklibname KDevPlatformShell %{kdevplatformshell_major}
 
 %package -n %{libkdevplatformshell}
@@ -279,7 +279,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformutil_major 52
+%define kdevplatformutil_major 53
 %define libkdevplatformutil %mklibname KDevPlatformUtil %{kdevplatformutil_major}
 
 %package -n %{libkdevplatformutil}
@@ -295,7 +295,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformvcs_major 52
+%define kdevplatformvcs_major 53
 %define libkdevplatformvcs %mklibname KDevplatformVcs %{kdevplatformvcs_major}
 
 %package -n %{libkdevplatformvcs}
@@ -311,7 +311,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define sublime_major 52
+%define sublime_major 53
 %define libsublime %mklibname KDevPlatformSublime %{sublime_major}
 
 %package -n %{libsublime}
@@ -327,7 +327,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformdebugger_major 52
+%define kdevplatformdebugger_major 53
 %define libkdevplatformdebugger %mklibname KDevPlatformDebugger %{kdevplatformdebugger_major}
 
 %package -n %{libkdevplatformdebugger}
@@ -343,7 +343,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformdocumentation_major 52
+%define kdevplatformdocumentation_major 53
 %define libkdevplatformdocumentation %mklibname KDevPlatformDocumentation %{kdevplatformdocumentation_major}
 
 %package -n %{libkdevplatformdocumentation}
@@ -359,7 +359,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformserialization_major 52
+%define kdevplatformserialization_major 53
 %define libkdevplatformserialization %mklibname KDevPlatformSerialization %kdevplatformserialization_major
 
 %package -n %libkdevplatformserialization
