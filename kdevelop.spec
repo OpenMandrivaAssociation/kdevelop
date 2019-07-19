@@ -105,10 +105,10 @@ KDevelop manages or provides:
      to the "Tools" menu according to your individual needs.
 
 %files -f %{name}.lang
-#{_kde5_sysconfdir}/xdg/kdevelop.categories
 %{_bindir}/%{name}*
 %{_bindir}/kdev_includepathsconverter
 %{_datadir}/applications/*.desktop
+%{_datadir}/qlogging-categories5/kdevelop.categories
 %{_datadir}/mime/packages/kdev*.xml
 %{_libdir}/libkdevcmakecommon.so
 %{_libdir}/libKDevClangPrivate.so.31
@@ -120,6 +120,7 @@ KDevelop manages or provides:
 %{_kde5_iconsdir}/hicolor/*/apps/github-*.png
 %{_kde5_iconsdir}/hicolor/*/apps/clazy.png
 %{_kde5_iconsdir}/hicolor/*/apps/qtlogo.svg
+%{_kde5_iconsdir}/hicolor/scalable/apps/kdevelop.svg
 %{_datadir}/kdevqmljssupport
 %{_datadir}/kdevelop
 %{_datadir}/kdevfiletemplates
@@ -185,13 +186,13 @@ Obsoletes:      kdevplatform4
 Kdevelop platform tools.
 
 %files -n kdevplatform 
-#{_kde5_sysconfdir}/xdg/kdevplatform.categories
 %{_bindir}/kdev_dbus_socket_transformer
 %{_bindir}/kdev_format_source
 %{_bindir}/kdevplatform_shell_environment.sh
 %{_datadir}/kdevcodegen
 %{_datadir}/kdevcodeutils
 %{_datadir}/kdevplatform
+%{_datadir}/qlogging-categories5/kdevplatform.categories
 %{_iconsdir}/hicolor/*/apps/subversion.*
 %{_iconsdir}/hicolor/*/apps/bazaar.png
 %{_iconsdir}/hicolor/*/apps/git.*
