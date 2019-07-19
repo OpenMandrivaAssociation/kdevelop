@@ -185,7 +185,7 @@ Obsoletes:      kdevplatform4
 Kdevelop platform tools.
 
 %files -n kdevplatform 
-%{_kde5_sysconfdir}/xdg/kdevplatform.categories
+#{_kde5_sysconfdir}/xdg/kdevplatform.categories
 %{_bindir}/kdev_dbus_socket_transformer
 %{_bindir}/kdev_format_source
 %{_bindir}/kdevplatform_shell_environment.sh
