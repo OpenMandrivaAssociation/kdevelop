@@ -105,7 +105,7 @@ KDevelop manages or provides:
      to the "Tools" menu according to your individual needs.
 
 %files -f %{name}.lang
-%{_kde5_sysconfdir}/xdg/kdevelop.categories
+#{_kde5_sysconfdir}/xdg/kdevelop.categories
 %{_bindir}/%{name}*
 %{_bindir}/kdev_includepathsconverter
 %{_datadir}/applications/*.desktop
