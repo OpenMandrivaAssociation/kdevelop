@@ -111,7 +111,7 @@ KDevelop manages or provides:
 %{_datadir}/applications/*.desktop
 %{_datadir}/qlogging-categories5/kdevelop.categories
 %{_datadir}/mime/packages/kdev*.xml
-%{_libdir}/libkdevcmakecommon.so.%{dev_clang_major}
+%{_libdir}/libKDevCMakeCommon.so.%{dev_clang_major}
 %{_libdir}/libKDevClangPrivate.so.%{dev_clang_major}
 %{_libdir}/libKDevCompileAnalyzerCommon.so.%{dev_clang_major}
 %{_libdir}/qt5/plugins/kdevplatform
