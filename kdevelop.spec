@@ -206,7 +206,7 @@ Kdevelop platform tools.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatforminterfaces_major 54
+%define kdevplatforminterfaces_major 55
 %define libkdevplatforminterfaces %mklibname KDevPlatformInterfaces %{kdevplatforminterfaces_major}
 
 %package -n %{libkdevplatforminterfaces}
