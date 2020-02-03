@@ -111,8 +111,9 @@ KDevelop manages or provides:
 %{_datadir}/applications/*.desktop
 %{_datadir}/qlogging-categories5/kdevelop.categories
 %{_datadir}/mime/packages/kdev*.xml
-#{_libdir}/libkdevcmakecommon.so
+%{_libdir}/libkdevcmakecommon.so.%{dev_clang_major}
 %{_libdir}/libKDevClangPrivate.so.%{dev_clang_major}
+%{_libdir}/libKDevCompileAnalyzerCommon.so.%{dev_clang_major}
 %{_libdir}/qt5/plugins/kdevplatform
 %{_kde5_iconsdir}/hicolor/*/apps/%{name}.png
 %{_kde5_iconsdir}/hicolor/*/apps/kdevgh.png
@@ -133,6 +134,9 @@ KDevelop manages or provides:
 %{_datadir}/kdevclangsupport
 %{_datadir}/knotifications5/kdevelop.notifyrc
 %{_datadir}/metainfo/org.kde.kdevelop.appdata.xml
+%{_datadir}/knsrcfiles/kdevappwizard.knsrc
+%{_datadir}/knsrcfiles/kdevelop-qthelp.knsrc
+%{_datadir}/knsrcfiles/kdevfiletemplates.knsrc
 # Exclude kdevplatform folders
 %exclude %{_kde5_datadir}/kdevplatform/
 %exclude %{_kde5_datadir}/kdevcodegen/
