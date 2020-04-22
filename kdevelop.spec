@@ -202,7 +202,7 @@ Kdevelop platform tools.
 %{_iconsdir}/hicolor/*/apps/bazaar.png
 %{_iconsdir}/hicolor/*/apps/git.*
 %{_iconsdir}/hicolor/*/actions/breakpoint.*
-%{_libdir}/qt5/plugins/grantlee/5.1/kdev_filters.so
+#{_libdir}/qt5/plugins/grantlee/5.1/kdev_filters.so
 %{_libdir}/qt5/qml/org/kde/kdevplatform/libkdevelopdashboarddeclarativeplugin.so
 %{_libdir}/qt5/qml/org/kde/kdevplatform/qmldir
 %{_datadir}/kservicetypes5/kdevelopplugin.desktop
