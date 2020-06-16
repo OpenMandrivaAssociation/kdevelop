@@ -18,7 +18,7 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	5.5.1
+Version:	5.5.2
 Release:	1
 Epoch:		4
 Group:		Development/C++
@@ -49,7 +49,7 @@ BuildRequires:	cmake(KF5ThreadWeaver)
 BuildRequires:	cmake(KF5XmlGui)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5Crash)
-BuildRequires:  cmake(KF5Runner)
+BuildRequires:	cmake(KF5Runner)
 BuildRequires:	cmake(OktetaKastenControllers)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Concurrent)
@@ -58,18 +58,20 @@ BuildRequires:	pkgconfig(Qt5QuickWidgets)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
 BuildRequires:	pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
-BuildRequires:  pkgconfig(Qt5Help)
-BuildRequires:  cmake(KDevelop-PG-Qt)
-BuildRequires:  cmake(KF5SysGuard)
+BuildRequires:	pkgconfig(Qt5Help)
+BuildRequires:	cmake(KDevelop-PG-Qt)
+BuildRequires:	cmake(KF5SysGuard)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(Grantlee5)
-BuildRequires:  cmake(LibKompareDiff2)
-BuildRequires: cmake(KDEExperimentalPurpose)
+BuildRequires:	cmake(LibKompareDiff2)
+BuildRequires:	cmake(KDEExperimentalPurpose)
 BuildRequires:	llvm-devel
 BuildRequires:	clang-devel
 BuildRequires:	shared-mime-info
 BuildRequires:	subversion-devel
-
+BuildRequires:	astyle-devel
+BuildRequires:	meson
+BuildRequires:	clazy
 %if %{compile_apidox}
 BuildRequires:	doxygen
 %endif
@@ -77,6 +79,8 @@ Requires:	cmake
 Requires:	git
 Requires:	gdb
 Requires:	kdevplatform >= %{EVRD}
+Recommends:	meson
+Recommends:	clazy
 %rename	kdevelop4
 
 %description
