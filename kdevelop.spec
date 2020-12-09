@@ -14,11 +14,11 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 33
+%define dev_clang_major 34
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	5.5.2
+Version:	5.6.1
 Release:	1
 Epoch:		4
 Group:		Development/C++
@@ -141,6 +141,11 @@ KDevelop manages or provides:
 %{_datadir}/knsrcfiles/kdevappwizard.knsrc
 %{_datadir}/knsrcfiles/kdevelop-qthelp.knsrc
 %{_datadir}/knsrcfiles/kdevfiletemplates.knsrc
+%{_libdir}/libKDevelopSessionsWatch.so
+%{_libdir}/qt5/plugins/kf5/krunner/krunner_kdevelopsessions.so
+%{_libdir}/qt5/qml/org/kde/plasma/private/kdevelopsessions/libkdevelopsessionsplugin.so
+%{_libdir}/qt5/qml/org/kde/plasma/private/kdevelopsessions/qmldir
+%{_datadir}/bash-completion/completions/kdevelop
 # Exclude kdevplatform folders
 %exclude %{_kde5_datadir}/kdevplatform/
 %exclude %{_kde5_datadir}/kdevcodegen/
@@ -156,7 +161,7 @@ Requires:	%{name} >= %{EVRD}
 Show KDevelop sessions.
 
 %files -n plasma-dataengine-kdevelopsessions
-%{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_kdevelopsessions.so
+#{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_kdevelopsessions.so
 
 #------------------------------------------------
 %package -n plasma-applet-kdevelopsessions
@@ -168,10 +173,10 @@ Requires:	plasma-dataengine-kdevelopsessions >= %{EVRD}
 Show KDevelop sessions.
 
 %files -n plasma-applet-kdevelopsessions
-%{_libdir}/qt5/plugins/krunner_kdevelopsessions.so
+#{_libdir}/qt5/plugins/krunner_kdevelopsessions.so
 %{_datadir}/kservices5/*kdevelopsessions.desktop
 %{_datadir}/plasma/plasmoids/kdevelopsessions
-%{_datadir}/plasma/services/*.operations
+#{_datadir}/plasma/services/*.operations
 
 #------------------------------------------------
 %package devel
@@ -214,7 +219,7 @@ Kdevelop platform tools.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatforminterfaces_major 55
+%define kdevplatforminterfaces_major 56
 %define libkdevplatforminterfaces %mklibname KDevPlatformInterfaces %{kdevplatforminterfaces_major}
 
 %package -n %{libkdevplatforminterfaces}
@@ -230,7 +235,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformlanguage_major 55
+%define kdevplatformlanguage_major 56
 %define libkdevplatformlanguage %mklibname KDevPlatformLanguage %{kdevplatformlanguage_major}
 
 %package -n %{libkdevplatformlanguage}
@@ -246,7 +251,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformoutputview_major 55
+%define kdevplatformoutputview_major 56
 %define libkdevplatformoutputview %mklibname KDevPlatformOutputView %{kdevplatformoutputview_major}
 
 %package -n %{libkdevplatformoutputview}
@@ -262,7 +267,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformproject_major 55
+%define kdevplatformproject_major 56
 %define libkdevplatformproject %mklibname KDevPlatformProject %{kdevplatformproject_major}
 
 %package -n %{libkdevplatformproject}
@@ -278,7 +283,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformshell_major 55
+%define kdevplatformshell_major 56
 %define libkdevplatformshell %mklibname KDevPlatformShell %{kdevplatformshell_major}
 
 %package -n %{libkdevplatformshell}
@@ -294,7 +299,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformutil_major 55
+%define kdevplatformutil_major 56
 %define libkdevplatformutil %mklibname KDevPlatformUtil %{kdevplatformutil_major}
 
 %package -n %{libkdevplatformutil}
@@ -310,7 +315,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformvcs_major 55
+%define kdevplatformvcs_major 56
 %define libkdevplatformvcs %mklibname KDevplatformVcs %{kdevplatformvcs_major}
 
 %package -n %{libkdevplatformvcs}
@@ -326,7 +331,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define sublime_major 55
+%define sublime_major 56
 %define libsublime %mklibname KDevPlatformSublime %{sublime_major}
 
 %package -n %{libsublime}
@@ -342,7 +347,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformdebugger_major 55
+%define kdevplatformdebugger_major 56
 %define libkdevplatformdebugger %mklibname KDevPlatformDebugger %{kdevplatformdebugger_major}
 
 %package -n %{libkdevplatformdebugger}
@@ -358,7 +363,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformdocumentation_major 55
+%define kdevplatformdocumentation_major 56
 %define libkdevplatformdocumentation %mklibname KDevPlatformDocumentation %{kdevplatformdocumentation_major}
 
 %package -n %{libkdevplatformdocumentation}
@@ -374,7 +379,7 @@ KF5 library.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformserialization_major 55
+%define kdevplatformserialization_major 56
 %define libkdevplatformserialization %mklibname KDevPlatformSerialization %kdevplatformserialization_major
 
 %package -n %libkdevplatformserialization
