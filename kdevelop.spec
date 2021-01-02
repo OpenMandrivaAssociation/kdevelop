@@ -29,6 +29,8 @@ Source1:	%{name}.rpmlintrc
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
 BuildRequires:	qt5-assistant
 BuildRequires:	boost-devel
+BuildRequires:  bash-completion
+BuildRequires:  pkgconfig(bash-completion)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5Declarative)
 BuildRequires:	cmake(KF5DocTools)
