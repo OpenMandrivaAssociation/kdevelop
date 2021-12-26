@@ -233,7 +233,7 @@ KF5 library.
 
 %files -n %{libkdevplatforminterfaces}
 %{_libdir}/libKDevPlatformInterfaces.so.%{kdevplatforminterfaces_major}*
-%{_libdir}/libKDevPlatformInterfaces.so.%{version}
+#{_libdir}/libKDevPlatformInterfaces.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -249,7 +249,7 @@ KF5 library.
 
 %files -n %{libkdevplatformlanguage}
 %{_libdir}/libKDevPlatformLanguage.so.%{kdevplatformlanguage_major}*
-%{_libdir}/libKDevPlatformLanguage.so.%{version}
+#{_libdir}/libKDevPlatformLanguage.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -265,7 +265,7 @@ KF5 library.
 
 %files -n %{libkdevplatformoutputview}
 %{_libdir}/libKDevPlatformOutputView.so.%{kdevplatformoutputview_major}*
-%{_libdir}/libKDevPlatformOutputView.so.%{version}
+#{_libdir}/libKDevPlatformOutputView.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -281,7 +281,7 @@ KF5 library.
 
 %files -n %{libkdevplatformproject}
 %{_libdir}/libKDevPlatformProject.so.%{kdevplatformproject_major}*
-%{_libdir}/libKDevPlatformProject.so.%{version}
+#{_libdir}/libKDevPlatformProject.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -297,7 +297,7 @@ KF5 library.
 
 %files -n %{libkdevplatformshell}
 %{_libdir}/libKDevPlatformShell.so.%{kdevplatformshell_major}*
-%{_libdir}/libKDevPlatformShell.so.%{version}
+#{_libdir}/libKDevPlatformShell.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -313,7 +313,7 @@ KF5 library.
 
 %files -n %{libkdevplatformutil}
 %{_libdir}/libKDevPlatformUtil.so.%{kdevplatformutil_major}*
-%{_libdir}/libKDevPlatformUtil.so.%{version}
+#{_libdir}/libKDevPlatformUtil.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -329,7 +329,7 @@ KF5 library.
 
 %files -n %{libkdevplatformvcs}
 %{_libdir}/libKDevPlatformVcs.so.%{kdevplatformvcs_major}*
-%{_libdir}/libKDevPlatformVcs.so.%{version}
+#{_libdir}/libKDevPlatformVcs.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -345,7 +345,7 @@ KF5 library.
 
 %files -n %{libsublime}
 %{_libdir}/libKDevPlatformSublime.so.%{sublime_major}*
-%{_libdir}/libKDevPlatformSublime.so.%{version}
+#{_libdir}/libKDevPlatformSublime.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -361,7 +361,7 @@ KF5 library.
 
 %files -n %{libkdevplatformdebugger}
 %{_libdir}/libKDevPlatformDebugger.so.%{kdevplatformdebugger_major}*
-%{_libdir}/libKDevPlatformDebugger.so.%{version}
+#{_libdir}/libKDevPlatformDebugger.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -377,7 +377,7 @@ KF5 library.
 
 %files -n %{libkdevplatformdocumentation}
 %{_libdir}/libKDevPlatformDocumentation.so.%{kdevplatformdocumentation_major}*
-%{_libdir}/libKDevPlatformDocumentation.so.%{version}
+#{_libdir}/libKDevPlatformDocumentation.so.%{version}
 
 #-----------------------------------------------------------------------------
 
@@ -393,7 +393,7 @@ KF5 library.
 
 %files -n %libkdevplatformserialization
 %_libdir/libKDevPlatformSerialization.so.%{kdevplatformserialization_major}*
-%_libdir/libKDevPlatformSerialization.so.%{version}
+#_libdir/libKDevPlatformSerialization.so.%{version}
 
 #-----------------------------------------------------------------------------
 
