@@ -18,13 +18,13 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	5.6.2
+Version:	21.12.0
 Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
 Url:		http://www.kdevelop.org/
-Source0:	http://download.kde.org/stable/kdevelop/%{version}/src/kdevelop-%{version}.tar.xz
+Source0:	https://download.kde.org/stable/release-service/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
 BuildRequires:	qt5-assistant
