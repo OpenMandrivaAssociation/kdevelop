@@ -15,6 +15,7 @@
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
 %define dev_clang_major 35
+%define minor 5.7.211200
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
@@ -221,7 +222,7 @@ Kdevelop platform tools.
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatforminterfaces_major 56
+%define kdevplatforminterfaces_major 57
 %define libkdevplatforminterfaces %mklibname KDevPlatformInterfaces %{kdevplatforminterfaces_major}
 
 %package -n %{libkdevplatforminterfaces}
@@ -233,11 +234,11 @@ KF5 library.
 
 %files -n %{libkdevplatforminterfaces}
 %{_libdir}/libKDevPlatformInterfaces.so.%{kdevplatforminterfaces_major}*
-%{_libdir}/libKDevPlatformInterfaces.so.%{version}
+%{_libdir}/libKDevPlatformInterfaces.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformlanguage_major 56
+%define kdevplatformlanguage_major 57
 %define libkdevplatformlanguage %mklibname KDevPlatformLanguage %{kdevplatformlanguage_major}
 
 %package -n %{libkdevplatformlanguage}
@@ -249,11 +250,11 @@ KF5 library.
 
 %files -n %{libkdevplatformlanguage}
 %{_libdir}/libKDevPlatformLanguage.so.%{kdevplatformlanguage_major}*
-%{_libdir}/libKDevPlatformLanguage.so.%{version}
+%{_libdir}/libKDevPlatformLanguage.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformoutputview_major 56
+%define kdevplatformoutputview_major 57
 %define libkdevplatformoutputview %mklibname KDevPlatformOutputView %{kdevplatformoutputview_major}
 
 %package -n %{libkdevplatformoutputview}
@@ -265,11 +266,11 @@ KF5 library.
 
 %files -n %{libkdevplatformoutputview}
 %{_libdir}/libKDevPlatformOutputView.so.%{kdevplatformoutputview_major}*
-%{_libdir}/libKDevPlatformOutputView.so.%{version}
+%{_libdir}/libKDevPlatformOutputView.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformproject_major 56
+%define kdevplatformproject_major 57
 %define libkdevplatformproject %mklibname KDevPlatformProject %{kdevplatformproject_major}
 
 %package -n %{libkdevplatformproject}
@@ -281,11 +282,11 @@ KF5 library.
 
 %files -n %{libkdevplatformproject}
 %{_libdir}/libKDevPlatformProject.so.%{kdevplatformproject_major}*
-%{_libdir}/libKDevPlatformProject.so.%{version}
+%{_libdir}/libKDevPlatformProject.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformshell_major 56
+%define kdevplatformshell_major 57
 %define libkdevplatformshell %mklibname KDevPlatformShell %{kdevplatformshell_major}
 
 %package -n %{libkdevplatformshell}
@@ -297,11 +298,11 @@ KF5 library.
 
 %files -n %{libkdevplatformshell}
 %{_libdir}/libKDevPlatformShell.so.%{kdevplatformshell_major}*
-%{_libdir}/libKDevPlatformShell.so.%{version}
+%{_libdir}/libKDevPlatformShell.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformutil_major 56
+%define kdevplatformutil_major 57
 %define libkdevplatformutil %mklibname KDevPlatformUtil %{kdevplatformutil_major}
 
 %package -n %{libkdevplatformutil}
@@ -313,11 +314,11 @@ KF5 library.
 
 %files -n %{libkdevplatformutil}
 %{_libdir}/libKDevPlatformUtil.so.%{kdevplatformutil_major}*
-%{_libdir}/libKDevPlatformUtil.so.%{version}
+%{_libdir}/libKDevPlatformUtil.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformvcs_major 56
+%define kdevplatformvcs_major 57
 %define libkdevplatformvcs %mklibname KDevplatformVcs %{kdevplatformvcs_major}
 
 %package -n %{libkdevplatformvcs}
@@ -329,11 +330,11 @@ KF5 library.
 
 %files -n %{libkdevplatformvcs}
 %{_libdir}/libKDevPlatformVcs.so.%{kdevplatformvcs_major}*
-%{_libdir}/libKDevPlatformVcs.so.%{version}
+%{_libdir}/libKDevPlatformVcs.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define sublime_major 56
+%define sublime_major 57
 %define libsublime %mklibname KDevPlatformSublime %{sublime_major}
 
 %package -n %{libsublime}
@@ -345,11 +346,11 @@ KF5 library.
 
 %files -n %{libsublime}
 %{_libdir}/libKDevPlatformSublime.so.%{sublime_major}*
-%{_libdir}/libKDevPlatformSublime.so.%{version}
+%{_libdir}/libKDevPlatformSublime.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformdebugger_major 56
+%define kdevplatformdebugger_major 57
 %define libkdevplatformdebugger %mklibname KDevPlatformDebugger %{kdevplatformdebugger_major}
 
 %package -n %{libkdevplatformdebugger}
@@ -361,11 +362,11 @@ KF5 library.
 
 %files -n %{libkdevplatformdebugger}
 %{_libdir}/libKDevPlatformDebugger.so.%{kdevplatformdebugger_major}*
-%{_libdir}/libKDevPlatformDebugger.so.%{version}
+%{_libdir}/libKDevPlatformDebugger.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformdocumentation_major 56
+%define kdevplatformdocumentation_major 57
 %define libkdevplatformdocumentation %mklibname KDevPlatformDocumentation %{kdevplatformdocumentation_major}
 
 %package -n %{libkdevplatformdocumentation}
@@ -377,11 +378,11 @@ KF5 library.
 
 %files -n %{libkdevplatformdocumentation}
 %{_libdir}/libKDevPlatformDocumentation.so.%{kdevplatformdocumentation_major}*
-%{_libdir}/libKDevPlatformDocumentation.so.%{version}
+%{_libdir}/libKDevPlatformDocumentation.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
-%define kdevplatformserialization_major 56
+%define kdevplatformserialization_major 57
 %define libkdevplatformserialization %mklibname KDevPlatformSerialization %kdevplatformserialization_major
 
 %package -n %libkdevplatformserialization
@@ -393,7 +394,7 @@ KF5 library.
 
 %files -n %libkdevplatformserialization
 %_libdir/libKDevPlatformSerialization.so.%{kdevplatformserialization_major}*
-%_libdir/libKDevPlatformSerialization.so.%{version}
+%_libdir/libKDevPlatformSerialization.so.%{minor}
 
 #-----------------------------------------------------------------------------
 
