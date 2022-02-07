@@ -15,7 +15,7 @@
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
 %define dev_clang_major 35
-%define minor 5.7.211201
+%define minor 5.7.211202
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
