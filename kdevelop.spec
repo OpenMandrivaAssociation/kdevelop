@@ -15,11 +15,10 @@
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
 %define dev_clang_major 36
-%define minor 5.8.220390
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	22.03.90
+Version:	22.04.0
 Release:	1
 Epoch:		4
 Group:		Development/C++
@@ -233,8 +232,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatforminterfaces}
-%{_libdir}/libKDevPlatformInterfaces.so.%{kdevplatforminterfaces_major}*
-%{_libdir}/libKDevPlatformInterfaces.so.%{minor}
+%{_libdir}/libKDevPlatformInterfaces.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -249,8 +247,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformlanguage}
-%{_libdir}/libKDevPlatformLanguage.so.%{kdevplatformlanguage_major}*
-%{_libdir}/libKDevPlatformLanguage.so.%{minor}
+%{_libdir}/libKDevPlatformLanguage.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -265,8 +262,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformoutputview}
-%{_libdir}/libKDevPlatformOutputView.so.%{kdevplatformoutputview_major}*
-%{_libdir}/libKDevPlatformOutputView.so.%{minor}
+%{_libdir}/libKDevPlatformOutputView.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -281,8 +277,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformproject}
-%{_libdir}/libKDevPlatformProject.so.%{kdevplatformproject_major}*
-%{_libdir}/libKDevPlatformProject.so.%{minor}
+%{_libdir}/libKDevPlatformProject.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -297,8 +292,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformshell}
-%{_libdir}/libKDevPlatformShell.so.%{kdevplatformshell_major}*
-%{_libdir}/libKDevPlatformShell.so.%{minor}
+%{_libdir}/libKDevPlatformShell.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -313,8 +307,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformutil}
-%{_libdir}/libKDevPlatformUtil.so.%{kdevplatformutil_major}*
-%{_libdir}/libKDevPlatformUtil.so.%{minor}
+%{_libdir}/libKDevPlatformUtil.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -329,8 +322,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformvcs}
-%{_libdir}/libKDevPlatformVcs.so.%{kdevplatformvcs_major}*
-%{_libdir}/libKDevPlatformVcs.so.%{minor}
+%{_libdir}/libKDevPlatformVcs.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -345,8 +337,7 @@ Group: System/Libraries
 KF5 library.
 
 %files -n %{libsublime}
-%{_libdir}/libKDevPlatformSublime.so.%{sublime_major}*
-%{_libdir}/libKDevPlatformSublime.so.%{minor}
+%{_libdir}/libKDevPlatformSublime.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -361,8 +352,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformdebugger}
-%{_libdir}/libKDevPlatformDebugger.so.%{kdevplatformdebugger_major}*
-%{_libdir}/libKDevPlatformDebugger.so.%{minor}
+%{_libdir}/libKDevPlatformDebugger.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -377,8 +367,7 @@ Group:          System/Libraries
 KF5 library.
 
 %files -n %{libkdevplatformdocumentation}
-%{_libdir}/libKDevPlatformDocumentation.so.%{kdevplatformdocumentation_major}*
-%{_libdir}/libKDevPlatformDocumentation.so.%{minor}
+%{_libdir}/libKDevPlatformDocumentation.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -393,8 +382,7 @@ Group: System/Libraries
 KF5 library.
 
 %files -n %libkdevplatformserialization
-%_libdir/libKDevPlatformSerialization.so.%{kdevplatformserialization_major}*
-%_libdir/libKDevPlatformSerialization.so.%{minor}
+%_libdir/libKDevPlatformSerialization.so.*
 
 #-----------------------------------------------------------------------------
 
