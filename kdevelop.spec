@@ -14,17 +14,17 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 36
+%define dev_clang_major 37
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	22.04.3
+Version:	22.07.90
 Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
 Url:		http://www.kdevelop.org/
-Source0:	https://download.kde.org/stable/release-service/%{version}/src/kdevelop-%{version}.tar.xz
+Source0:	https://download.kde.org/%([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)/release-service/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
 BuildRequires:	qt5-assistant
