@@ -18,7 +18,7 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	22.08.1
+Version:	22.08.2
 Release:	1
 Epoch:		4
 Group:		Development/C++
