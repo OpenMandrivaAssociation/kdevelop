@@ -14,11 +14,11 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 37
+%define dev_clang_major 510
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 Epoch:		4
 Group:		Development/C++
