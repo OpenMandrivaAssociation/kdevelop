@@ -14,13 +14,13 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 510
+%define dev_clang_major 511
 %define __requires_exclude /bin/zsh
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	22.12.3
-Release:	2
+Version:	23.03.90
+Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
@@ -28,6 +28,7 @@ Url:		http://www.kdevelop.org/
 Source0:	https://download.kde.org/%([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)/release-service/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
+Patch2:		kdevelop-23.03.90-clang16.patch
 BuildRequires:	qt5-assistant
 BuildRequires:	boost-devel
 BuildRequires:  bash-completion
@@ -214,7 +215,7 @@ Kdevelop platform tools.
 %{_iconsdir}/hicolor/*/apps/bazaar.png
 %{_iconsdir}/hicolor/*/apps/git.*
 %{_iconsdir}/hicolor/*/actions/breakpoint.*
-%{_libdir}/qt5/plugins/grantlee/5.2/kdev_filters.so
+%{_libdir}/qt5/plugins/grantlee/*/kdev_filters.so
 %{_libdir}/qt5/qml/org/kde/kdevplatform/libkdevelopdashboarddeclarativeplugin.so
 %{_libdir}/qt5/qml/org/kde/kdevplatform/qmldir
 %{_datadir}/kservicetypes5/kdevelopplugin.desktop
