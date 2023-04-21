@@ -20,7 +20,7 @@
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
 Version:	23.03.90
-Release:	1
+Release:	2
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
@@ -31,8 +31,8 @@ Patch1:		kdevplatform-5.0.3-bsdtar.patch
 Patch2:		kdevelop-23.03.90-clang16.patch
 BuildRequires:	qt5-assistant
 BuildRequires:	boost-devel
-BuildRequires:  bash-completion
-BuildRequires:  pkgconfig(bash-completion)
+BuildRequires:	bash-completion
+BuildRequires:	pkgconfig(bash-completion)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5Declarative)
 BuildRequires:	cmake(KF5DocTools)
@@ -70,12 +70,19 @@ BuildRequires:	cmake(Grantlee5)
 BuildRequires:	cmake(LibKompareDiff2)
 BuildRequires:	cmake(KDEExperimentalPurpose)
 BuildRequires:	llvm-devel
+BuildRequires:	llvm-static-devel
+BuildRequires:	spirv-llvm-translator
+BuildRequires:	llvm-bolt
+BuildRequires:	libclc-amdgcn
+BuildRequires:	libclc-nvptx
 BuildRequires:	clang-devel
 BuildRequires:	shared-mime-info
 BuildRequires:	subversion-devel
 BuildRequires:	astyle-devel
 BuildRequires:	meson
 BuildRequires:	clazy
+BuildRequires:	pkgconfig(libzstd)
+BuildRequires:	pkgconfig(libxml-2.0)
 %if %{compile_apidox}
 BuildRequires:	doxygen
 %endif
