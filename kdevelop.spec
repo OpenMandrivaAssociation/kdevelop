@@ -29,7 +29,6 @@ Source0:	https://download.kde.org/%([ "`echo %{version} |cut -d. -f3`" -ge 80 ] 
 Source1:	%{name}.rpmlintrc
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
 Patch2:		kdevelop-23.03.90-clang16.patch
-Patch3:		kdevelop-23.04.2-compile.patch
 BuildRequires:	qt5-assistant
 BuildRequires:	boost-devel
 BuildRequires:	bash-completion

@@ -1,6 +1,6 @@
-diff -up kdevelop-23.03.90/plugins/clang/duchain/cursorkindtraits.h.omv~ kdevelop-23.03.90/plugins/clang/duchain/cursorkindtraits.h
---- kdevelop-23.03.90/plugins/clang/duchain/cursorkindtraits.h.omv~	2023-04-15 19:22:17.895392225 +0200
-+++ kdevelop-23.03.90/plugins/clang/duchain/cursorkindtraits.h	2023-04-15 19:23:47.653074339 +0200
+diff -up kdevelop-23.08.0/plugins/clang/duchain/cursorkindtraits.h.2~ kdevelop-23.08.0/plugins/clang/duchain/cursorkindtraits.h
+--- kdevelop-23.08.0/plugins/clang/duchain/cursorkindtraits.h.2~	2023-08-16 23:28:19.000000000 +0200
++++ kdevelop-23.08.0/plugins/clang/duchain/cursorkindtraits.h	2023-08-28 14:22:27.846793348 +0200
 @@ -189,6 +189,8 @@ constexpr Declaration::AccessPolicy kdev
  
  constexpr IntegralType::CommonIntegralTypes integralType(CXTypeKind TK)
@@ -13,7 +13,7 @@ diff -up kdevelop-23.03.90/plugins/clang/duchain/cursorkindtraits.h.omv~ kdevelo
 @@ -215,6 +217,7 @@ constexpr IntegralType::CommonIntegralTy
        ||TK == CXType_UChar
        ||TK == CXType_SChar)     ?  IntegralType::TypeChar
-     : static_cast<IntegralType::CommonIntegralTypes>(-1);
+     : IntegralType::TypeNotIntegralType;
 +#pragma GCC diagnostic pop
  }
  
