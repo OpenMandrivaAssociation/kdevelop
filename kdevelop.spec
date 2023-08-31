@@ -14,7 +14,7 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 511
+%define dev_clang_major 512
 %define __requires_exclude /bin/zsh
 
 Summary:	Integrated Development Environment for C++/C
@@ -67,7 +67,7 @@ BuildRequires:	cmake(KDevelop-PG-Qt)
 BuildRequires:	cmake(KF5SysGuard)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(Grantlee5)
-BuildRequires:	cmake(LibKompareDiff2)
+BuildRequires:	libkomparediff2-kf5-devel
 BuildRequires:	cmake(KDEExperimentalPurpose)
 BuildRequires:	llvm-devel
 BuildRequires:	llvm-static-devel
