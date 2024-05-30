@@ -14,13 +14,13 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 512
+%define dev_clang_major 514
 %define __requires_exclude /bin/zsh
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	23.08.5
-Release:	2
+Version:	24.05.0
+Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
@@ -64,7 +64,8 @@ BuildRequires:	pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Help)
 BuildRequires:	cmake(KDevelop-PG-Qt)
-BuildRequires:	cmake(KF5SysGuard)
+# This adds "Attach to process", but conflicts with P6...
+#BuildRequires:	cmake(KF5SysGuard)
 BuildRequires:	cmake(KF5Plasma)
 BuildRequires:	cmake(Grantlee5)
 BuildRequires:	libkomparediff2-kf5-devel
