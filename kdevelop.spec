@@ -24,7 +24,7 @@ Release:	1
 Epoch:		4
 Group:		Development/C++
 License:	GPLv2
-Url:		http://www.kdevelop.org/
+Url:		https://www.kdevelop.org/
 Source0:	https://download.kde.org/%([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)/release-service/%{version}/src/kdevelop-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
