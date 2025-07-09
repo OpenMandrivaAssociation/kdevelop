@@ -22,7 +22,7 @@
 #define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary:	Integrated Development Environment for C++/C
-Name:		plasma6-kdevelop
+Name:		kdevelop
 Version:	25.04.0
 Release:	2
 Group:		Development/C++
