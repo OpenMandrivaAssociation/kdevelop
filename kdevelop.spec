@@ -23,8 +23,8 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	25.04.0
-Release:	2
+Version:	25.04.3
+Release:	1
 Group:		Development/C++
 License:	GPLv2
 Url:		https://www.kdevelop.org/
@@ -107,6 +107,8 @@ BuildSystem:	cmake
 BuildOption:	-DBUILD_TESTING=OFF
 BuildOption:	-DBSDTAR=1
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+%rename plasma6-kdevelop
 
 %description
 The KDevelop Integrated Development Environment provides many features that
@@ -247,8 +249,3 @@ Development files for kdevplatform.
 %{_libdir}/libKDevPlatformSublime.so
 %{_libdir}/libKDevPlatformDebugger.so
 %{_libdir}/libKDevPlatformDocumentation.so
-
-#-----------------------------------------------------------------------------
-
-%install -a
-%find_lang %{name} --all-name --with-html
