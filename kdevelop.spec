@@ -14,7 +14,7 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 62
+%define dev_clang_major 63
 %define __requires_exclude /bin/zsh
 
 #define git 20240927
@@ -23,7 +23,7 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	25.04.3
+Version:	25.08.0
 Release:	1
 Group:		Development/C++
 License:	GPLv2
@@ -35,7 +35,7 @@ Source0:	https://download.kde.org/%([ "`echo %{version} |cut -d. -f3`" -ge 80 ] 
 %endif
 Patch1:		kdevplatform-5.0.3-bsdtar.patch
 Patch2:		kdevelop-23.03.90-clang16.patch
-BuildRequires:	qt5-assistant
+BuildRequires:	qt6-qttools-assistant
 BuildRequires:	boost-devel
 BuildRequires:	bash-completion
 BuildRequires:	pkgconfig(bash-completion)
@@ -64,8 +64,6 @@ BuildRequires:	cmake(KF6Runner)
 BuildRequires:	cmake(KF6Sonnet)
 BuildRequires:	cmake(KF6TextTemplate)
 BuildRequires:	cmake(KF6TextWidgets)
-BuildRequires:	cmake(OktetaGui)
-BuildRequires:	cmake(Okteta3Kasten5Controllers)
 BuildRequires:	cmake(Plasma)
 BuildRequires:	cmake(PlasmaQuick)
 BuildRequires:	pkgconfig(Qt6Widgets)
@@ -79,7 +77,6 @@ BuildRequires:	pkgconfig(Qt6Help)
 BuildRequires:	cmake(KDevelop-PG-Qt)
 BuildRequires:	cmake(KSysGuard) >= 6.0.0
 BuildRequires:	cmake(KompareDiff2) >= 6.0.0
-BuildRequires:	cmake(KDEExperimentalPurpose)
 BuildRequires:	llvm-devel
 BuildRequires:	llvm-static-devel
 BuildRequires:	spirv-llvm-translator
