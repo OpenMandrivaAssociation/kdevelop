@@ -75,6 +75,8 @@ BuildRequires:	pkgconfig(Qt6WebEngineWidgets)
 BuildRequires:	pkgconfig(Qt6Test)
 BuildRequires:	pkgconfig(Qt6Help)
 BuildRequires:	cmake(Qt6Core5Compat)
+BuildRequires:	cmake(Qt6QmlAssetDownloader)
+BuildRequires:	cmake(Qt6Tools)
 BuildRequires:	cmake(KDevelop-PG-Qt)
 BuildRequires:	cmake(KSysGuard) >= 6.0.0
 BuildRequires:	cmake(KompareDiff2) >= 6.0.0
