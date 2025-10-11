@@ -23,7 +23,7 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	25.08.1
+Version:	25.08.2
 Release:	1
 Group:		Development/C++
 License:	GPLv2
@@ -149,7 +149,6 @@ KDevelop manages or provides:
 %{_qtdir}/plugins/kdevplatform
 %{_qtdir}/plugins/kf6/krunner/kdevelopsessions.so
 %{_qtdir}/qml/org/kde/plasma/private/kdevelopsessions
-%{_datadir}/metainfo/org.kde.kdevelopsessions.appdata.xml
 %{_datadir}/plasma/plasmoids/org.kde.kdevelopsessions
 %{_datadir}/icons/hicolor/*/apps/kdevelop.png
 %{_datadir}/icons/hicolor/*/apps/kdevgh.png
