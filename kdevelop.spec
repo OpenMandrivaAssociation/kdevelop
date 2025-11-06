@@ -181,6 +181,7 @@ KDevelop manages or provides:
 %package devel
 Summary:	Development files for kdevelop
 Group:		Development/KDE and Qt
+%rename plasma6-kdevelop-devel
 
 %description devel
 Development files for kdevelop.
