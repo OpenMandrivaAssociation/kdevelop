@@ -87,6 +87,7 @@ BuildRequires:	llvm-bolt
 BuildRequires:	libclc-amdgcn
 BuildRequires:	libclc-nvptx
 BuildRequires:	clang-devel
+BuildRequires:	cmake(MLIR)
 BuildRequires:	shared-mime-info
 BuildRequires:	subversion-devel
 BuildRequires:	astyle-devel
