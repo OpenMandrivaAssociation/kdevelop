@@ -11,7 +11,8 @@
 
 %define libname_orig libkdevplatform4
 %define major   5
-%define libname %mklibname kdevplatform %{major}
+%define oldlibname %mklibname kdevplatform %{major}
+%define libname %mklibname kdevplatform
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
 %define dev_clang_major 65
@@ -232,6 +233,7 @@ Summary:        Development files for kdevplatform
 Group:          Development/KDE and Qt
 Provides:       kdevplatform-devel = %{EVRD}
 Requires:       kdevplatform = %{EVRD}
+%rename %{oldlibname}-devel
 
 %description -n %{libname}-devel
 Development files for kdevplatform.
