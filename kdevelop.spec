@@ -14,7 +14,7 @@
 %define libname %mklibname kdevplatform %{major}
 %define old_major 2
 %define old_libname %mklibname kdevplatform4 %{old_major}
-%define dev_clang_major 64
+%define dev_clang_major 65
 %define __requires_exclude /bin/zsh
 
 #define git 20240927
@@ -23,7 +23,7 @@
 
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
-Version:	25.12.3
+Version:	26.04.0
 Release:	1
 Group:		Development/C++
 License:	GPLv2
@@ -207,7 +207,7 @@ Kdevelop platform tools.
 %{_datadir}/kdevcodeutils
 %{_datadir}/kdevplatform
 %{_datadir}/qlogging-categories6/kdevplatform.categories
-%{_iconsdir}/hicolor/*/apps/subversion.*
+%{_iconsdir}/hicolor/*/apps/kdevsubversion.*
 %{_iconsdir}/hicolor/*/apps/bazaar.png
 %{_iconsdir}/hicolor/*/apps/git.*
 %{_iconsdir}/hicolor/*/actions/breakpoint.*
