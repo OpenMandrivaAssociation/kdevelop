@@ -25,7 +25,7 @@
 Summary:	Integrated Development Environment for C++/C
 Name:		kdevelop
 Version:	26.04.3
-Release:	1
+Release:	2
 Group:		Development/C++
 License:	GPLv2
 Url:		https://www.kdevelop.org/
